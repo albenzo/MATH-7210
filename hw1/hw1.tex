@@ -11,6 +11,7 @@
 
 \newcommand{\sk}{\vskip 10mm}
 \newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\ra}{\rightarrow}
 
 \theoremstyle{plain}
 \newtheorem{problem}{Problem}
@@ -23,10 +24,10 @@
 \begin{document}
 
 \begin{problem}
-  Let $f:A\rightarrow B$. Then:
+  Let $f:A\ra B$. Then:
   \begin{itemize}
-  \item[a)] $f$ is injective if and only if it has a right inverse.
-  \item[b)] $f$ is surjective if and only if it has a left inverse.
+  \item[a)] $f$ is injective if and only if it has a left inverse.
+  \item[b)] $f$ is surjective if and only if it has a right inverse.
   \item[c)] $f$ is bijective if and only if it has a left and right inverse.
   \item[d)] If $|A|=|B|=n\in \bb{Z}_{\geq0}$ then $f$ is injective if and only if f is
     surjective if and only if $f$ is bijective.
@@ -35,11 +36,100 @@
 
 \begin{proof}\ \\
   \begin{itemize}
-  \item[a)] 
-  \item[b)]
-  \item[c)]
-  \item[d)]
+  \item[a)] Suppose that $f$ is injective. This implies that $f^{-1}(f(a))=\{a\}$ for all
+    $a\in A$. Define $g:B\ra A$ as $g(b)=f^{-1}(a)$ where $b\in f(A)$. If $b\notin f(A)$
+    then send it to any arbitrary $a\in A$. Then $g\circ f(a)=f^{-1}(f(a))=a$ which implies
+    that $g\circ f=id_A$ and that $g$ is a left inverse of $f$.
+
+    Now suppose that there exists a function $g:B\ra A$ such that $g\circ f = id_A$.
+    Let $a_0,a_1\in A$ such that $f(a_0)=f(a_1)$. Then
+    $g\circ f(a_0)=a_0=a_1=g\circ f(a_1)$ which is the definition of injectivity.
+
+    Therefore $f$ is injective if and only if it has a left inverse.
+  \item[b)] Suppose that $f$ is surjective. Then given $b\in B$ there exists an $a\in A$
+    such that $f(a)=b$. Define a function $g:B\ra A$ via $g(b)=a$ where $a$ fulfills
+    $f(a)=b$. Then $f\circ g(b)=b$ by definition which implies that $g$ is a right
+    inverse of $f$.
+
+    Now suppose that there exists a function $g:B\ra A$ such that $f\circ g= id_B$. Then
+    given $b\in B$ let $a=g(b)$. Then $f(a)=f\circ g(b)=b$. Since this holds for all
+    elements of $b$ $f$ is surjective.
+
+    Therefore $f$ is surjective if and only if it has a right inverse.
+  \item[c)] Suppose that $f$ is a bijection. Then it is both injective and surjective
+    which by the previous statements in the proposition implies that $f$ has both
+    a left and right inverse.
+
+    Otherwise suppose that $f$ has a left and right inverse. Then via the previous
+    statements in the proposition we know that $f$ is both injective and surjective and
+    thus a bijection.
+
+    To show that the left and right inverse are unique let $g,h$ be a left and right
+    inverse for $f$ respectively. Then
+    \[g=g\circ id_B=g\circ(f\circ h)=(g\circ f)\circ h=id_A\circ h=h\]
+
+    Therefore $f$ is a bijection if and only if it has a left and right inverse.
+    Moreover these inverses are equal.
+  \item[d)] Suppose that $|A|=|B|=1$. Then there is only one function $f:A\ra B$
+    defined as $f(a_0)=b_0$. As such the function $f$ is injective, surjective and
+    bijective.
+
+    Next assume for sets of size $n$ that a function is injective if and only if it
+    is surjective if and only if it is bijective. Let $|A|=|B|=n+1$, and 
+    without loss of generality let $f$ be injective. Select $a_n$ and $b_n=f(a_n)$
+    and look at $f|_{A\setminus \{a_n\}}$. This will preserve injectivity since we removed
+    paired items. This implies that $f|_{A\setminus\{a_n\}}$ is injective, surjective, and
+    bijective via our inductive hypothesis. Reintroduce the pair $(a_n,b_n)$ to the
+    function $f|_{A\setminus \{a_n\}}$. This will preserve injectivity as only $a_n$ maps
+    to $b_n$, surjectivity because $b_n$ is mapped to by $a_n$, and as such $f$ is
+    bijective.
+
+    Therefore via induction, if $|A|=|B|=n\in \bb{Z}_{>0}$ then a function $f:A\ra B$ is
+    injective if and only if it is surjective if and only if it is bijective.
   \end{itemize}
+\end{proof}
+
+\sk
+
+\begin{problem}
+  Let $\sim$ be an equivalence relation of the set A. For any $a,b\in A$,
+  \begin{itemize}
+  \item[a)] $a\sim b$ if and only if $\bar{a}=\bar{b}$.
+  \item[b)] if $\bar{a}\neq \bar{b}$, then $\bar{a}\cap\bar{b}=\phi$
+  \end{itemize}
+\end{problem}
+
+\begin{proof}\ \\
+  \begin{itemize}
+  \item[a)] Suppose that $a\sim b$. Without loss of generality let $c\in\bar{a}$. Then
+    $c\sim a$ which implies that $c\sim b$ by transitivity and as such $c\in\bar{b}$
+    Therefore if $a\sim b$ then $\bar{a}=\bar{b}$.
+
+    Now suppose that $\bar{a}=\bar{b}$. Since $a\in\bar{a}$ and $b\in\bar{b}$ by
+    reflexivity we know that $a,b\in\bar{b}$ and as such $a\sim b$.
+
+    Therefore $a\sim b$ if and only if $\bar{a}=\bar{b}$.
+  \item[b)] Suppose that $\bar{a}\neq\bar{b}$ and that there existed a
+    $c\in \bar{a}\cap\bar{b}$. Then $a\sim c$ and $c\sim b$ which would imply that
+    $a\sim b$ by transitivity and that $\bar{a}=\bar{b}$ by the previous part of the
+    proposition which is a contradiction.
+
+    Therefore if $\bar{a}\neq\bar{b}$ then $\bar{a}\cap\bar{b}=\phi$
+  \end{itemize}
+\end{proof}
+
+\sk
+
+\begin{problem}
+  Let $n$ be a fixed positive integer. Then
+  \[ (\bb{Z}/n\bb{Z})^\times = \{ \bar{a}\in \bb{Z}/n\bb{Z}|1\leq a\leq n\ \text{and}\ a,n\ \text{are relatively prime}\}\]
+\end{problem}
+
+\begin{proof}
+  Let $\bar{a}\in(\bb{Z}/n\bb{Z})^\times$. Then $\bar{a}$ has a multiplicative inverse
+  $\bar{c}$ such that $\bar{a}\bar{c}=\bar{1}$.
+
+  Otherwise suppose that $a,n$ are relatively prime.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
