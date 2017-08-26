@@ -70,7 +70,9 @@
 
     Therefore $f$ is a bijection if and only if it has a left and right inverse.
     Moreover these inverses are equal.
-  \item[d)] Suppose that $|A|=|B|=1$. Then there is only one function $f:A\ra B$
+  \item[d)] \textbf{Double check this argument}
+
+    Suppose that $|A|=|B|=1$. Then there is only one function $f:A\ra B$
     defined as $f(a_0)=b_0$. As such the function $f$ is injective, surjective and
     bijective.
 
@@ -127,9 +129,14 @@
 
 \begin{proof}
   Let $\bar{a}\in(\bb{Z}/n\bb{Z})^\times$. Then $\bar{a}$ has a multiplicative inverse
-  $\bar{c}$ such that $\bar{a}\bar{c}=\bar{1}$.
+  $\bar{\alpha}$ such that $\bar{a}\bar{\alpha}=\bar{1}$. This means that
+  $a\alpha=kn+1$ where $k\in\bb{Z}$. Rearrange and we get
+  $\alpha a+kn=1$ which implies that the $\mathrm{gcd}(a,n)=1$.
 
-  Otherwise suppose that $a,n$ are relatively prime.
+  Otherwise suppose that $a,n$ are relatively prime. Then using the extended
+  Euclidean algorithm we can get $\alpha,\beta\in\bb{Z}$ such that $\alpha a+\beta n = 1$.
+  Rearrange to get $\alpha a = (-\beta)n +1$ and rewrite mod $n$ for
+  $\bar{\alpha}\bar{a}=\bar{1}$ which implies that $\bar{a}\in(\bb{Z}/n\bb{Z})^\times$
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
