@@ -70,21 +70,33 @@
 
     Therefore $f$ is a bijection if and only if it has a left and right inverse.
     Moreover these inverses are equal.
-  \item[d)] \textbf{Double check this argument}
-
+  \item[d)]
     Suppose that $|A|=|B|=1$. Then there is only one function $f:A\ra B$
     defined as $f(a_0)=b_0$. As such the function $f$ is injective, surjective and
     bijective.
 
     Next assume for sets of size $n$ that a function is injective if and only if it
-    is surjective if and only if it is bijective. Let $|A|=|B|=n+1$, and 
-    without loss of generality let $f$ be injective. Select $a_n$ and $b_n=f(a_n)$
-    and look at $f|_{A\setminus \{a_n\}}$. This will preserve injectivity since we removed
-    paired items. This implies that $f|_{A\setminus\{a_n\}}$ is injective, surjective, and
-    bijective via our inductive hypothesis. Reintroduce the pair $(a_n,b_n)$ to the
-    function $f|_{A\setminus \{a_n\}}$. This will preserve injectivity as only $a_n$ maps
-    to $b_n$, surjectivity because $b_n$ is mapped to by $a_n$, and as such $f$ is
-    bijective.
+    is surjective if and only if it is bijective. Let $|A|=|B|=n+1$.
+
+    First consider the case where $f$ is bijective. Then by definition $f$ is also
+    injective and surjective.
+
+    Next, if $f$ is injective then take the pair $(a_n,b_n)$, where
+    $f(a_n)=b_n$. Since $f$ is injective the restriction $f|_{a_n}$ will be well
+    defined since no other element of $A$ maps to $b_n$. However via our inductive
+    hypothesis this implies that $f|_{A\setminus\{a_n\}}$ is also bijective and surjective.
+    Reintroduce $(a_n,b_n)$ to $f|_{A\setminus\{a_n\}}$ and this will maintain injectivity and
+    surjectivity since no other element will map to $b_n$ and $b_n$ is mapped to
+    by $a_n$.
+
+    Finally suppose that $f$ is surjective. Then given any $b\in B$ we can find an $a\in A$
+    that maps to it. There must be at least one $b_i\in B$ such that $f^{-1}(b_i)=a_i$
+    since if the pullback for every element was greater than $1$ we would have
+    $|A|>2|B|$ which contradicts our assumption. Now we can take the restriction
+    $f_{A\setminus\{a_i\}}$ which will still be surjective. Which by our inductive
+    hypothesis implies that $f_{A\setminus\{a_i\}}$ is injective and bijective. Reintroduce
+    pair $(a_i,b_i)$ to $f$ and for the same reasoning as above we preserve injectivity,
+    surjectivity, and bijectivity.
 
     Therefore via induction, if $|A|=|B|=n\in \bb{Z}_{>0}$ then a function $f:A\ra B$ is
     injective if and only if it is surjective if and only if it is bijective.
