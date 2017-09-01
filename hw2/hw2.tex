@@ -1,0 +1,107 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amscd}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{listings}
+\usepackage{enumerate}
+
+\textwidth=15cm \textheight=22cm \topmargin=0.5cm \oddsidemargin=0.5cm \evensidemargin=0.5cm
+
+\newcommand{\sk}{\vskip 10mm}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\ra}{\rightarrow}
+
+\theoremstyle{plain}
+\newtheorem{problem}{Problem}
+\newtheorem{lemma}{Lemma}[problem]
+
+\theoremstyle{remark}
+\newtheorem{tpart}{}[problem]
+\newtheorem*{ppart}{}
+
+\begin{document}
+
+\begin{problem}[1.1.21] 
+  
+\end{problem}
+
+\begin{proof}
+  Let $x\in G$ have order odd $2n+1$. Then $x^{2n+1}=e$ and if we multiply by $x$
+  on both sides we get $x^{2n+2}=x^{2(n+1)}=x$.
+
+  Therefore if $x$ has odd order then it $x^{2k}=x$ for some $k\in\bb{Z}_{>0}$.
+\end{proof}
+
+\sk
+
+\begin{problem}[1.1.25] 
+  
+\end{problem}
+
+\begin{proof}
+  Suppose that $G$ is a group such that for all $x\in G$ that $x^2=1$.
+  This implies that for any element $x^{-1}=x$. Then we have
+  $xy=(xy)^{-1}=y^{-1}x^{-1}=yx$
+  which shows that $G$ is commutative.
+\end{proof}
+
+\sk
+
+\begin{problem}[1.1.35] 
+  
+\end{problem}
+
+\begin{proof}
+  Let $x\in G$ have order $n$. Then consider $x^m$. Using the division algorithm
+  with $m$ and $n$ we can rewrite $m$ as $qn+d$ where $0\leq d<n$. This implies
+  that
+  \[ x^m=x^{qn+d}=x^{qn}x^d=(x^n)^qx^d=e^qx^d=x^d \]
+  As such $x\in\{e,x^1,\ldots,x^{n-1}\}$.
+\end{proof}
+
+\sk
+
+\begin{problem}[1.3.6] 
+  
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}[1.3.9] 
+  
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}[1.3.13] 
+  
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}[1.5.2] 
+  
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
