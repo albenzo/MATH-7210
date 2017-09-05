@@ -67,9 +67,14 @@
   
 \end{problem}
 
-\begin{proof}
-  
-\end{proof}
+\begin{itemize}
+\item $(1\ 2\ 3\ 4)=(1\ 4)(1\ 3)(1\ 2)$
+\item $(1\ 3\ 4\ 2)=(1\ 2)(1\ 4)(1\ 3)$
+\item $(1\ 4\ 3\ 2)=(1\ 2)(1\ 3)(1\ 4)$
+\item $(4\ 3\ 2\ 1)=(4\ 1)(4\ 2)(4\ 3)$
+\item $(2\ 4\ 3\ 1)=(2\ 1)(2\ 3)(2\ 4)$
+\item $(3\ 2\ 4\ 1)=(3\ 1)(3\ 4)(3\ 2)$
+\end{itemize}
 
 \sk
 
@@ -77,9 +82,11 @@
   
 \end{problem}
 
-\begin{proof}
-  
-\end{proof}
+\begin{itemize}
+\item[a)] $1+12k,5+12k,7+12k,11+12k$ for $k\in\bb{Z}$.
+\item[b)] $1+8k,3+8k,5+8k,7+8k$ for $k\in\bb{Z}$.
+\item[c)] $1+14k,3+14k,5+14k,9+14k,11+14k,13+14k$ for $k\in\bb{Z}$.
+\end{itemize}
 
 \sk
 
@@ -88,7 +95,25 @@
 \end{problem}
 
 \begin{proof}
-  
+  Suppose that $g\in S_n$ is of the form $g=\prod_{i=1}^m(a_i\ b_i)$
+  where each transposition commutes. Then
+  \[ g^2 = \left(\prod_{i=1}^m(a_i\ b_i)\right)^2=
+    \prod_{i=1}^m((a_i\ b_i)^2=e)=e \]
+  which implies that $g$ is of order 2.
+
+  Next suppose that $g\in S_n$ is of order 2. We can write $g$
+  as a product of disjoint cycles $\prod_{i=1}^m\sigma_i$. Since
+  the cycles are disjoint we can write $g^2$ as
+  \[ g^2=\left(\prod_{i=1}^m\sigma_i\right)^2=\prod_{i=1}^m\sigma_i^2=e \]
+
+  Then for a given $\sigma_i$ rewrite the above to
+  \[ \prod_{i\in\{1\ldots m\}-j}\sigma_i^2 = \sigma_j^{-2} \]
+  However since each $\sigma_i$ is disjoint this implies that
+  $\sigma_j^{-2}=e=\sigma_j^2$. Since this is for an arbitrary
+  $\sigma_i$ we have that $\sigma_i^2$ for all $i$.
+
+  Therefore a permutation is of order two if and only if
+  it is the product of disjoint $2-$cycles.
 \end{proof}
 
 \sk
@@ -97,10 +122,11 @@
   
 \end{problem}
 
-\begin{proof}
-  
-\end{proof}
-
+\begin{itemize}
+\item
+\item
+\item
+\end{itemize}
 \sk
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
