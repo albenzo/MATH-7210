@@ -1,0 +1,305 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amscd}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{listings}
+\usepackage{enumerate}
+
+\textwidth=15cm \textheight=22cm \topmargin=0.5cm \oddsidemargin=0.5cm \evensidemargin=0.5cm
+
+\newcommand{\sk}{\vskip 10mm}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\vc}[2]{\left(\begin{array}{cc} #1\\ #2\end{array}\right)}
+
+\theoremstyle{plain}
+\newtheorem{problem}{Problem}
+\newtheorem{lemma}{Lemma}[problem]
+
+\theoremstyle{remark}
+\newtheorem{tpart}{}[problem]
+\newtheorem*{ppart}{}
+
+\begin{document}
+
+\begin{problem}[1.6.2]
+  
+\end{problem}
+
+\begin{proof}
+  Let $\varphi:G\rightarrow H$ be an isomorphism and let $x\in G$ where $|x|=n$. Since
+  $\varphi(x^n)=\varphi(x)^n$ it follows that $|x|\geq|\varphi(x)|$. However
+  $\varphi$ is an isomorphism which implies that $\varphi^{-1}$ is also an
+  isomorphism. Via the same reasoning this implies that
+  $|\varphi(x)|\geq|\varphi^{-1}\circ\varphi(x)=x|$. Therefore $|x|=|\varphi(x)|$.
+
+  If $\varphi$ is an isomorphism and $G_n$ is the set of elements of
+  order $n$ in $G$ then $\varphi|_{G_n}$ is a bijection and since
+  $\varphi$ preserves orders it follows that we have the same
+  number of elements of order $n$ in $G$ and $H$ for any $n$.
+\end{proof}
+
+It does not hold if $\varphi$ is not an isomorphism. Consider
+$\varphi:\bb{Z}/6\bb{Z}\rightarrow\{e\}$. Then the order of for any $\varphi(x)$ is
+$1$.
+
+\sk
+
+\begin{problem}[1.6.3]
+  
+\end{problem}
+
+\begin{proof}
+  Let $\varphi:G\rightarrow H$ be an isomorphism and suppose that $H$ is Abelian.
+  Then for $x,y\in G$ we have
+  \[ xy = \varphi^{-1}\circ\varphi(xy)=\varphi^{-1}(\varphi(x)\varphi(y))=\varphi^{-1}(\varphi(y)\varphi(x))=yx \]
+  which implies that $G$ is Abelian. If $G$ is Abelian
+  swap $\varphi$ for $\varphi^{-1}$ and the reasoning will be identical to above.
+
+  Therefore if $\varphi:G\rightarrow H$ is an isomorphism then $G$ is Abelian if and
+  only if $H$ is Abelian.
+\end{proof}
+
+If $\varphi:G\rightarrow H$ is a homomorphism and $H$ is Abelian then we can show that
+$G$ is Abelian if $\varphi$ is injective via the proof above as there will be
+a well defined inverse on $\varphi(G)$.
+
+Otherwise if $G$ is Abelian we can show that $H$ is Abelian if
+$\varphi$ is surjective.
+
+\begin{proof}
+  Let $x,y\in H$. Since $\varphi$ is surjective there exist $a,b\in G$ such that
+  $\varphi(a)=x$ and $\varphi(b)=y$. Then
+  \[ xy = \varphi(a)\varphi(b)=\varphi(ab)=\varphi(ba)=\varphi(b)\varphi(a)=yx \]
+  which implies that $H$ is Abelian.
+\end{proof}
+
+\sk
+
+\begin{problem}[1.6.4]
+  
+\end{problem}
+
+\begin{proof}
+  Suppose that $\varphi:\bb{C}^*\rightarrow\bb{R}^*$. Then $\phi(z)=-1$ for some
+  $z\in\bb{C}$. However there is a $w\in \bb{C}$ such that $w^2=z$
+  which implies that there exists a $y\in\bb{R}^*$ such that
+  $\varphi(w)=x$ and that $x^2=-1$ which is impossible.
+
+  Therefore $\bb{C}^*$ and $\bb{R}^*$ are not isomorphic.
+\end{proof}
+
+\sk
+
+\begin{problem}[1.6.7]
+  
+\end{problem}
+
+\begin{proof}
+  In $\mathcal{Q}_8$ the identity has order $1$, $|-1|=2$, and
+  $|i|=|j|=|k|=|-i|=|-j|=|-k|=4$. However in $D_8$ the elements
+  $r$ and $\rho^2$ are both of order two. Since $D_8$ has more
+  elements of order two than $\mathcal{Q}_8$ they cannot be
+  isomorphic.
+\end{proof}
+
+\sk
+
+\begin{problem}[1.6.17]
+  
+\end{problem}
+
+\begin{proof}
+  Let $G$ be Abelian. Consider the inverse map $\varphi(g)=g^{-1}$.
+  Then
+  \[ \varphi(g)\varphi(h)=g^{-1}h^{-1}=h^{-1}g^{-1}=\varphi(gh)\]
+  and since $e=e^{-1}$ it follows that $\varphi$ is a homomorphism.
+
+  Otherwise suppose that $G$ is not Abelian. This implies that
+  exist $g,h\in G$ such that $gh\neq hg$. Then
+  \[ \varphi(g^{-1})\varphi(h^{-1})=gh\neq hg = \varphi(g^{-1}h^{-1})\]
+  which implies that $\varphi$ cannot be a homomorphism.
+\end{proof}
+
+\sk
+
+\begin{problem}[1.6.25]
+  
+\end{problem}
+
+\begin{proof}
+  \begin{itemize}
+  \item[a)] Let $\vc{x}{y}$ be a point in $\bb{R}^2$. Then rewrite $\vc{x}{y}$ in
+    polar coordinates as $\vc{r\cos\phi}{r\sin\phi}$. Then if we multiply by the
+    rotation matrix we get
+    \[
+      \left(\begin{array}{cc}
+        \cos\theta&-\sin\theta\\
+        \sin\theta&\cos\theta
+      \end{array}\right)
+      \vc{r\cos\phi}{r\sin\phi}
+      = \vc{r\cos\theta\cos\phi-r\sin\theta\sin\phi}{r\sin\theta\cos\phi+r\sin\phi\cos\theta}
+      = \vc{r\cos(\theta+\phi)}{r\sin(\theta+\phi)}
+    \]
+    which corresponds to a rotation of $\vc{x}{y}$ clockwise by $\theta$.
+  \item[b)] 
+  \item[c)]
+  \end{itemize}
+\end{proof}
+
+\sk
+
+\begin{problem}[1.6.26]
+  
+\end{problem}
+
+\begin{proof}
+  Since $\mathcal{Q}_8$ is finite we can show that $\varphi:\mathcal{Q}_8\rightarrow \text{GL}_2(\bb{C})$
+  by calculating the value of $\varphi$ for each $q\in\mathcal{Q}_8$.
+
+  \[
+    \begin{array}{ccc}
+      
+      \varphi(1)  &= \varphi(i^4) &=
+                       \left(\begin{array}{cc}
+                               1&0\\
+                               0&1
+                             \end{array}\right)\\\\
+      \varphi(-1) &= \varphi(i^2) &=
+                       \left(\begin{array}{cc}
+                               -1&0\\
+                               0&-1
+                             \end{array}\right)\\\\
+      \varphi(i)  &= \varphi(i)  &=
+                       \left(\begin{array}{cc}
+                               \sqrt{-1}&0\\
+                               0&-\sqrt{-1}
+                             \end{array}\right)\\\\
+      \varphi(-i) &= \varphi(i^3) &=
+                       \left(\begin{array}{cc}
+                               -\sqrt{-1}&0\\
+                               0&\sqrt{-1}
+                             \end{array}\right)\\\\
+      \varphi(j)  &= \varphi(j)  &=
+                       \left(\begin{array}{cc}
+                               0&-1\\
+                               1&0
+                             \end{array}\right)\\\\
+      \varphi(-j) &= \varphi(j^3) &=
+                       \left(\begin{array}{cc}
+                               0&1\\
+                               -1&0
+                             \end{array}\right)\\\\
+      \varphi(k)  &= \varphi(ij) &=
+                       \left(\begin{array}{cc}
+                               0&-\sqrt{-1}\\
+                               -\sqrt{-1}&0
+                             \end{array}\right)\\\\
+      \varphi(-k) &= \varphi(ji) &=
+                       \left(\begin{array}{cc}
+                               0&\sqrt{-1}\\
+                               \sqrt{-1}&0
+                             \end{array}\right)
+                                          
+    \end{array}
+  \]
+  Since each element of $\mathcal{Q}_8$ maps to a distinct element of
+  $\text{GL}_2(\bb{C})$ the homomorphism $\varphi$ is injective.
+\end{proof}
+
+\sk
+
+\begin{problem}[2.1.3]
+  
+\end{problem}
+
+\begin{proof}\ \\
+  \begin{itemize}
+  \item[a)]
+    \[
+      \begin{array}{c|cccc}
+           &1  &r^2 &s &sr^2\\
+        \hline
+        1  &1  &r^2 &s  &sr^2\\
+        r^2 &r^2 &1  &sr^2&s\\
+        s  &s  &sr^2&1  &r^2\\
+        sr^2&sr^2&s  &r^2 &1\\
+      \end{array}
+    \] 
+  \item[b)]
+    \[
+      \begin{array}{c|cccc}
+           &1  &r^2 &sr &sr^3\\
+        \hline
+        1  &1  &r^2 &sr &sr^3\\
+        r^2 &r^2 &1  &sr^3&sr\\
+        sr &sr &sr^3&1  &r^2\\
+        sr^3&sr^3&sr &r^2 &1\\
+      \end{array}
+    \]
+  \end{itemize}
+\end{proof}
+
+\sk
+
+\begin{problem}[2.1.10(a)]
+  
+\end{problem}
+
+\begin{proof}
+  Let $H,K\leq G$. Then we will show that $H\cap K\leq G$.
+  \begin{itemize}
+  \item Since $H,K\leq G$ it follows that $e\in H$ and $e\in K$ which
+    implies that $e\in H\cap K$
+  \item Let $g\in H\cap K$. Then $g\in H$ and $g\in K$ which implies that
+    $g^{-1}\in H$ and $g^{-1}\in K$. It then follows that $g^{-1}\in H\cap K$.
+  \item Now let $g,h\in H\cap K$. Then $g,h\in H$ and $g,h\in K$ which implies
+    that $gh\in H$ and $gh\in K$. It then follows that $gh\in H\cap K$.
+  \end{itemize}
+
+  Therefore if $H,K\leq G$ then $H\cap K\leq G$.
+\end{proof}
+
+\sk
+
+\begin{problem}[2.3.1]
+  
+\end{problem}
+
+The subgroups of the form $\left<x\right>$ of $\bb{Z}_{45}$ are
+$\left<0\right>,\left<1\right>,\left<3\right>,\left<5\right>,\left<9\right>,$
+and $\left<15\right>$. \textbf{Containment drawn below}.
+
+\vskip 3in
+
+\begin{problem}[2.3.3]
+  
+\end{problem}
+
+The generators will be the elements of order $48$ which will consist of
+the elements that are relatively prime to $48$. These are
+
+\[ 1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35, 37, 41, 43, 47 \]
+
+\sk
+
+\begin{problem}[2.3.12(a)]
+  
+\end{problem}
+
+\begin{proof}
+  A group is cyclic if it can be generated by a single element.
+  There are a total of four elements in $Z_2\times Z_2$. These are
+  $(0,0),(0,1),(1,0),$ and $(1,1)$. The order of $(0,0)$ is 1,
+  and the order of the rest of the elements is $2$. However since
+  the size of the group is $4$ it follows that none of the elements
+  could generate the group as the size of the group generated is at
+  most two.
+
+  Therefore the group $Z_2\times Z_2$ is not cyclic.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
