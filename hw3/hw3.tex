@@ -143,9 +143,27 @@ $\varphi$ is surjective.
       = \vc{r\cos\theta\cos\phi-r\sin\theta\sin\phi}{r\sin\theta\cos\phi+r\sin\phi\cos\theta}
       = \vc{r\cos(\theta+\phi)}{r\sin(\theta+\phi)}
     \]
-    which corresponds to a rotation of $\vc{x}{y}$ clockwise by $\theta$.
-  \item[b)] 
+    which corresponds to a rotation of $\vc{x}{y}$ counter-clockwise by $\theta$
+    as the new angle is $\theta+\phi$.
+  \item[b)] Let $\rho\in D_{2n}$. Then we can write $\rho$ in the form $s^ir^m$ where
+    $0\leq i<2$ and $0\leq m < n$. This corresponds to rotating by $\frac{2m\pi}{n}$ and
+    reflecting $i$ times. 
   \item[c)]
+    Suppose that we have two $a,b\in D_{2n}$ such that $\varphi(a)=\varphi(b)$. Since any element
+    of $D_{2n}$ can be written in the form $s^ir^m$ it follows that
+    \[ \varphi(a)=\varphi(b)= \left(
+        \begin{array}{cc}
+          0&1\\
+          1&0
+        \end{array}
+      \right)^i\left(
+        \begin{array}{rr}
+          \cos\frac{2m\pi}{n}&-\sin\frac{2m\pi}{n}\\
+          \sin\frac{2m\pi}{n}&\cos\frac{2m\pi}{n}
+        \end{array}
+      \right)\]
+    where $i<2$ and $m<n$ since a homomorphism cannot increase the order of elements.
+    However this implies that $$
   \end{itemize}
 \end{proof}
 
