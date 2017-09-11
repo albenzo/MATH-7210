@@ -84,8 +84,8 @@ $\varphi$ is surjective.
 
 \begin{proof}
   Suppose that $\varphi:\bb{C}^*\rightarrow\bb{R}^*$. Then $\phi(z)=-1$ for some
-  $z\in\bb{C}$. However there is a $w\in \bb{C}$ such that $w^2=z$
-  which implies that there exists a $y\in\bb{R}^*$ such that
+  $z\in\bb{C}^*$. However there is a $w\in \bb{C}^*$ such that $w^2=z$
+  which implies that there exists a $x\in\bb{R}^*$ such that
   $\varphi(w)=x$ and that $x^2=-1$ which is impossible.
 
   Therefore $\bb{C}^*$ and $\bb{R}^*$ are not isomorphic.
@@ -145,25 +145,31 @@ $\varphi$ is surjective.
     \]
     which corresponds to a rotation of $\vc{x}{y}$ counter-clockwise by $\theta$
     as the new angle is $\theta+\phi$.
-  \item[b)] Let $\rho\in D_{2n}$. Then we can write $\rho$ in the form $s^ir^m$ where
-    $0\leq i<2$ and $0\leq m < n$. This corresponds to rotating by $\frac{2m\pi}{n}$ and
-    reflecting $i$ times. 
-  \item[c)]
-    Suppose that we have two $a,b\in D_{2n}$ such that $\varphi(a)=\varphi(b)$. Since any element
-    of $D_{2n}$ can be written in the form $s^ir^m$ it follows that
-    \[ \varphi(a)=\varphi(b)= \left(
-        \begin{array}{cc}
-          0&1\\
-          1&0
-        \end{array}
-      \right)^i\left(
-        \begin{array}{rr}
-          \cos\frac{2m\pi}{n}&-\sin\frac{2m\pi}{n}\\
-          \sin\frac{2m\pi}{n}&\cos\frac{2m\pi}{n}
-        \end{array}
-      \right)\]
-    where $i<2$ and $m<n$ since a homomorphism cannot increase the order of elements.
-    However this implies that $$
+  \item[b)] We will denote $\varphi(s)$ as $S$ and $\varphi(r)$ as $R$. We know that $r$
+    maps to a counter clockwise rotation of $\frac{2\pi}{n}$. If we assume that $r^m$ corresponds
+    to $R^m$ which is a counter clockwise rotation of $\frac{2m\pi}{n}$. Then $r^{m+1}$ can
+    be defined as mapping to $R^{m+1}$ corresponding to a rotation of
+    $\frac{2(m+1)\pi}{n}$.
+
+    Now suppose that we have $sr^m$. Then $\varphi(sr^m)$ should
+    correspond to a clockwise rotation of $\frac{2m\pi}{n}$
+    with a reflection at the end
+    Then we can define $\varphi(sr^m)=SR^m$ and in a similar way
+    let $\varphi(r^ms)=R^mS$.
+
+    Let $\rho,\eta\in D_{2n}$. We can write them as
+    $\rho= s^ir^a$ and $\eta=r^bs^j$. Then
+    \[ \varphi(\rho\eta)=\varphi(s^ir^{a+b}s^j)=S^iR^{a+b}S^j=S^iR^{a}R^bS^j=\varphi(\rho)\varphi(\eta)\]
+    Since $\varphi$ preserves the group operation it is indeed a
+    homomorphism.
+  \item[c)] Let $\rho,\eta\in D_{2n}$ and suppose that
+    $\varphi(\rho)=\varphi(\eta)$ which we can write in the form
+    $SR^m$. As we defined above this is mapped to by
+    $sr^m$ or $r^{n-m}s$ which are equivalent in $D_{2n}$.
+    This implies that $\rho$ and $\eta$ are both elements
+    equivalent to $sr^m$.
+
+    Therefore the function $\varphi$ is injective.
   \end{itemize}
 \end{proof}
 
@@ -175,7 +181,7 @@ $\varphi$ is surjective.
 
 \begin{proof}
   Since $\mathcal{Q}_8$ is finite we can show that $\varphi:\mathcal{Q}_8\rightarrow \text{GL}_2(\bb{C})$
-  by calculating the value of $\varphi$ for each $q\in\mathcal{Q}_8$.
+  by calculating the value of $\varphi(q)$ for each $q\in\mathcal{Q}_8$.
 
   \[
     \begin{array}{ccc}
