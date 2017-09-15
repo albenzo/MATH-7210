@@ -28,7 +28,21 @@
 \end{problem}
 
 \begin{proof}
-  
+  First we will show that $N$ is normal. Then given $g\in N$ for all $x\in G$ there
+  exists an $h\in H$ such that $g=xhx^{-1}$. Let $k\in G$ then $kgk^{-1}=h\in H$ as
+  $g\in k^{-1}Hk$. However $g \in k^{-1}xHx^{-1}k$ for any $x\in G$. It then follows that
+  \[ h=kgk^{-1}=kk^{-1}xh'x^{-1}kk^{-1}=xh'x\]
+  which implies that $h\in xHx^{-1}$ for all $x\in G$ and therefore $h\in N$.
+  Therefore $N$ is a normal subgroup of $G$.
+
+  Now we will show that $N$ is the largest normal subgroup of $G$ contained in $H$.
+  Let $M$ be a subgroup of $G$ such that $M\trianglelefteq G$ and $M\leq H$. Then
+  given $g\in M$ and $x\in G$ we have $x^{-1}gx=h\in M$. However this implies that
+  $g=xhx^{-1}$ for all $x$ and since $M\leq H$ we have that $h\in H$ and therefore
+  $g\in N$ and $M\leq N$.
+
+  Therefore since $N$ is normal and normal subgroup contained in $H$ is contained
+  in $N$ we have that $N$ is the largest normal subgroup contained in $H$.
 \end{proof}
 
 \sk
@@ -38,7 +52,26 @@
 \end{problem}
 
 \begin{proof}
-  
+  \begin{itemize}
+  \item[a)] For reflexivity, since $H,K\leq G$ we have $exe=x\in HxK$.
+
+    For symmetry if $x\sim y$ then $x\in HyK$ which implies that $x=hyk$ for some $h\in H$ and
+    $k\in K$. However since $H,G\leq G$ we have that $h^{-1}xk^{-1}=y$ which implies that
+    $y\in HxK$ and therefore $y\sim x$.
+
+    For transitivity suppose that we have $x\sim y$ and $y\sim z$. Then as before we have
+    $x=hyk$ and $y=h'zk'$. It then follows that $x=hh'zk'k$ which implies that $x\in HzK$
+    and therefore $x\sim z$.
+
+    Let $\bar{x}$ denote the equivalence class of $x$. Then if $y\in HxK$ by definition
+    $y\sim x$ and $y\in X$. Otherwise if $y\in \bar{x}$ by definition $y\sim x$ which implies that
+    $y\in HxK$.
+
+    Therefore $\sim$ is an equivalence relation, the equivalence classes are
+    of the form $HxK$, and as such $H\setminus G/ K$ forms a partition of $G$.
+  \item[b)]
+  \item[c)]
+  \end{itemize}
 \end{proof}
 
 \sk
@@ -48,7 +81,92 @@
 \end{problem}
 
 \begin{proof}
-  
+  \begin{enumerate}
+  \item We'll start by showing that $C_G(A)$ is a subgroup. If we have $g,h\in C_G(A)$
+    then $gha=gah=agh$ so it is closed under the group operation. Then if $g\in C_G(A)$
+    we have $ga=ag$. Multiply on the left by and right by $g^{-1}$ and we get
+    $ag^{-1}=g^{-1}a$. Therefore $C_G(A)$ is a subgroup.
+
+    Next consider $N_G((A))$. If we have $g,h\in N_G(A)$ then $hah^{-1}=a'\in A$. This
+    implies that $ga'g^{-1}\in A$ and therefore $ghah^{-1}g^{-1}\in A$. Next let $g\in N_G(A)$
+    and $a\in A$. Then \textbf{Closed under inverses}.
+
+    Let $g\in C_G(A)$ then for $a\in A$ we have $gag^{-1}=agg^{-1}=a$ which implies that
+    $g\in N_G(A)$. Therefore $C_G(A)\subset N_G(A)$.
+  \item Let $a\in A$ and $n\in N_G(A)$. Then $nan^{-1}\in A$ be definition of $N_G(A)$. Therefore
+    if $A\leq G$ then $A\trianglelefteq N_G(A)$.
+  \item Let $z\in Z(G)$ and let $g\in G$. Then $zgz^{-1}=gzz^{-1}=g$ which implies that
+    $Z(G)$ is a normal subgroup of $G$.
+  \item For the group $S_3$ take the subgroup $\left<(1\ 2)\right>$. Then
+    $(1\ 2\ 3)(1\ 2)(3\ 2\ 1)=(2\ 3)\notin \left<(1\ 2)\right>$ which implies that
+    $\left<(1\ 2)\right>$ is not normal.
+  \item If $n$ is even then the center consists of $r^{n/2}$ and the identity. Otherwise
+    if $n$ is odd then the center is just the identity.
+  \item The subgroups of $\mathcal{Q}_8$ are $<1>,<-1>,<i>,<j>,<k>,\mathcal{Q}_8$. The
+    trivial group and $\mathcal{Q}_8$ are both normal. For the others we have
+    \begin{itemize}
+    \item[$<-1>$]
+      \[
+        \begin{array}{c|c}
+          g & g(-1)g^{-1}\\
+          \hline 
+          1 & -1\\
+          -1 & -1\\
+          i & -1\\
+          -i & -1\\
+          j & -1\\
+          -j & -1\\
+          k & -1\\
+          -k & -1\\
+        \end{array}
+      \]
+    \item[$<i>$]
+      \[
+        \begin{array}{c|c}
+          g & g(i)g\\
+          \hline 
+          1 & i\\
+          -1 & i\\
+          i & -i\\
+          -i & i\\
+          j & -i\\
+          -j & -i\\
+          k & -i\\
+          -k & \\
+        \end{array}
+      \]
+    \item[$<j>$]
+      \[
+        \begin{array}{c|c}
+          g & g(j)g\\
+          \hline 
+          1 & j\\
+          -1 & \\
+          i & \\
+          -i & \\
+          j & \\
+          -j & \\
+          k & \\
+          -k & \\
+        \end{array}
+      \]
+    \item[$<k>$]
+      \[
+        \begin{array}{c|c}
+          g & g(k)g\\
+          \hline 
+          1 & k\\
+          -1 & \\
+          i & \\
+          -i & \\
+          j & \\
+          -j & \\
+          k & \\
+          -k & \\
+        \end{array}
+      \]
+    \end{itemize}
+  \end{enumerate}
 \end{proof}
 
 \sk
@@ -58,7 +176,14 @@
 \end{problem}
 
 \begin{proof}
-  
+  Since $|G|=p$ where $p$ is prime by Lagrange's Theorem (2.12 in notes)
+  the order of any subgroup must be either $1$ or $p$. However the
+  only subgroups that fulfill these criterion are either the trivial
+  group or $G$ itself. Therefore $G$ cannot have any non-trivial subgroups.
+
+  Let $g\in G\setminus \{e\}$. Since there is no non-trivial subgroup the element
+  $\left<g\right>$ must generate the whole group. Then by definition
+  $G$ is cyclic.
 \end{proof}
 
 \sk
