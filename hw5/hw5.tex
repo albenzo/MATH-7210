@@ -1,0 +1,139 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amscd}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{listings}
+\usepackage{enumerate}
+
+\textwidth=15cm \textheight=22cm \topmargin=0.5cm \oddsidemargin=0.5cm \evensidemargin=0.5cm
+
+\newcommand{\sk}{\vskip 10mm}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\ra}{\rightarrow}
+
+\theoremstyle{plain}
+\newtheorem{problem}{Problem}
+\newtheorem{lemma}{Lemma}[problem]
+
+\theoremstyle{remark}
+\newtheorem{tpart}{}[problem]
+\newtheorem*{ppart}{}
+
+\begin{document}
+
+\begin{problem}[3.1.3] %1
+  
+\end{problem}
+
+\begin{proof}
+  Let $a,b\in G$. Then $\text{Inn}(ab)=\phi_{ab}$. For any $g\in G$ we have
+  \[\phi_{ab}(g)=abgb^{-1}a^{-1}=a\phi_b(g)a^{-1}=\phi_a\circ\phi_b(g)\]
+  Which implies that $\phi_{ab}=\phi_a\circ\phi_b=\text{Inn}(a)\circ\text{Inn}(b)$
+  completing the proof that $\text{Inn}$ is a group homomorphism.
+
+  Next, for an element $a\in G$ to be in the kernel of $\text{Inn}$
+  it is required to have $\phi_a(g)=g$. Then
+  $gag^{-1}=a$ which by cancellation we get $ga=ag$ for all $g\in G$.
+  Therefore the kernel of $\text{Inn}$ is $Z(G)$.
+
+  Finally let $\phi_a\in\text{Inn}(G)$ and $\varphi\in\text{Aut}(G)$. Then
+  the function $\varphi\circ\phi_a\circ\varphi^{-1}$ for an element $g\in G$ is
+  \[ \varphi\circ\phi_a\circ\varphi^{-1}(g)=\varphi(a\varphi^{-1}(g)a^{-1})=\varphi(a)\varphi\circ\varphi^{-1}(g)\circ\varphi(a^{-1})=\varphi(a)g\varphi(a)^{-1}=\phi_{\varphi(a)}(g) \]
+  which shows that $\text{Inn}(G)$ is closed under conjugation and is therefore a
+  normal subgroup of $\text{Aut}(G)$.
+\end{proof}
+
+
+\textbf{Elaborate on why this is the case}.
+The Automorphism group for $D_8$ is isomorphic to $D_8$ 
+
+The Inner Automorphism group for $D_8$ is isomorphic to $\mathcal{K}_4$
+
+\sk
+
+\begin{problem}[3.4] %2
+  
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}[3.5] %3
+  
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}[3.6] %4
+  
+\end{problem}
+
+\begin{proof}
+  \begin{enumerate}
+  \item Let $G,G'$ be groups. Then we will show that $G\times G'$ is a group
+    under pointwise multiplication.
+
+    \begin{enumerate}
+    \item[associativity:] Consider elements $(a,a'),(b,b'),(c,c')\in G\times G'$.
+      Then we have
+      \begin{align*}
+        ((a,a')\cdot(b,b'))\cdot(c,c')&=(ab,a'b')\cdot(c,c')\\
+                              &=((ab)c,(a'b')c')\\
+                              &= (a(bc),a'(b'c'))\\
+                              &=(a,a')\cdot(bc,b'c')\\
+                              &=(a,a')\cdot((b,b')\cdot(c,c'))
+      \end{align*}
+      Which shows that the group operation is associative.
+    \item[identity:] Consider $(e,e')$ made up of the identity elements of
+      $G$ and $G'$ respectively. Then for $(g,g')\in G\times G'$ we have
+      \[ (e,e')\cdot(g,g')=(eg,e'g')=(g,g')=(ge,g'e')=(g,g')(e,e')\]
+      which shows the existence of an identity.
+    \item[inverse:] Let $(g,g')\in G$. Then 
+      \begin{align*}
+        (g,g')\cdot(g^{-1},g'^{-1}) &=(gg^{-1},g'g'^{-1})\\
+                                &=(e,e')\\
+                                &=(g^{-1}g,g'^{-1}g')\\
+                                &=(g^{-1},g'^{-1})(g,g')\\
+      \end{align*}
+      Which shows that for any element we have a two sided inverse.
+    \end{enumerate}
+    Therefore the Cartesian product of groups $G\times G'$ is a group under pointwise
+    multiplication.
+
+  \item Let $M,N\trianglelefteq G$  such that $G=MN$.
+  \end{enumerate}
+\end{proof}
+
+\sk
+
+\begin{problem}[3.1.17] %5
+  
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}[3.1.32] %6
+  
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
