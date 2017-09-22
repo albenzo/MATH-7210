@@ -58,7 +58,45 @@ The Inner Automorphism group for $D_8$ is isomorphic to $\mathcal{K}_4$
 \end{problem}
 
 \begin{proof}
-  
+  Let $\phi:G\rightarrow \bar{G}$ be an epimorphism with $N:=\text{ker}\phi$ and $H$ a subgroup of $G$ containing $N$. Then
+  we will show that $H$ is normal in $G$ if and only if $\phi(H)$ is normal in $\bar{G}$. For the forward
+  direction suppose that $H$ is normal in $G$. Let $g'\in \bar{G}$ and $h'\in \phi(H)$. Since $\phi$ is an epimorphism
+  there exist $g\in G$ and $h\in H$ such that $\phi(g)=g'$ and $\phi(h)=h'$. Then
+  \[ g'h'g'^{-1}=\phi(g)\phi(h)\phi(g^{-1})=\phi(ghg^{-1})\]
+  which is in $\phi(H)$ since $H$ is normal. Therefore $\phi(H)$ is normal.
+
+  Now suppose that $\phi(H)$ is normal in $\bar{G}$. Let $g\in G$ and $h\in H$. Then
+  $\phi(ghg^{-1})=\phi(g)\phi(h)\phi(g^{-1})\in\phi(H)$ and since $\phi(ghg^{-1})$ lies in the image $\phi(H)$ this implies
+  that $ghg^{-1}\in H$ and therefore $H$ is normal.
+
+  Next consider the map $\varphi:H\mapsto \phi(H)$ on the lattice of subgroups containing $N$.
+  We will show that it is a bijection by proving that it is surjective and
+  injective. For surjectivity let $K\leq \bar{G}$. Then $\phi(K)\leq G$. Note that
+  $\phi^{-1}(\bar{e})\leq\phi^{-1}(K)$ which implies that $N\leq\phi^{-1}(K)$. Therefore $\phi(\phi^{-1}(K))=K$.
+
+  For injectivity let $\phi(H)=\phi(K)$ for $H,K\leq G$ where $H,K$ contain $N$. Without loss of generality let
+  $h\in H$. Then $\phi(h)\in\phi(K)$ and $\phi(h)=\phi(k)$ for some $k\in K$. This implies that $\phi(k^{-1}h)=\bar{e}$ and
+  it follows that $k^{-1}h\in N\leq K$. However since $k\in K$ we have that $h\in K$. Therefore $H\subset K$ and via the
+  same reasoning $K\subset H$ and therefore $H=K$.
+
+  Therefore the map $\varphi$ is a bijection.
+
+  Finally let $B\subset A$ be subgroups of $G$ that contain $N$. Then define a map $C:A/B\rightarrow \phi(A)/\phi(B)$
+  via $C(aB)=\phi(a)\phi(B)$. To show that the map is well defined let $aB=a'B$. Then $a=a'b$ for some $b\in B$.
+  So
+  \[ \phi(a)\phi(B)=\phi(a'b)\phi(B)=\phi(a')\phi(b)\phi(B)=\phi(a')\phi(B)\]
+  which shows that the map $C$ is well defined.
+
+  To show surjectivity let $a'\phi(B)\in \phi(A)/\phi(B)$. Then because $\phi$ is surjective there exists an $a\in A$ such that
+  $\phi(a)=a'$. Then $C(aB)=a'\phi(B)$ which shows is surjective.
+
+  Finally to show injectivity let $C(aB)=C(a'B)$. Then we have
+  \[ \phi(a)\phi(B)=\phi(a')\phi(B)\]
+  which implies that
+  \[ \phi(B)=\phi(a^{-1})\phi(a')\phi(B)\]
+  and thus $\phi(a^{-1}a')\in N\leq B$ which implies that $aB=a'B$.
+
+  Therefore there is a bijection between $A/B$ and $\phi(A)/\phi(B)$ and as such $|A:B|=|\phi(A):\phi(B)|$.
 \end{proof}
 
 \sk
@@ -68,7 +106,14 @@ The Inner Automorphism group for $D_8$ is isomorphic to $\mathcal{K}_4$
 \end{problem}
 
 \begin{proof}
-  
+  Let $H$ be a normal subgroup of $G$ where $|G:H|=p$. Let $K\leq G$ then there are two cases.
+  If $K\leq H$ then $K\leq H$ and we are done. Otherwise suppose that $K\nleq H$. We know that
+  $|G/H|=p$ which implies that $G/H$ is cyclic. There exists a $k\in K\setminus H$ such that
+  $\langle kH\rangle = G/H$. However this means that for any $g\in G$ we have $g\in k^iH$ and therefore
+  $g=k^ih$ where $h\in H$. Therefore $g\in HK$ and as such $G=HK$.
+
+  By the second isomorphsim theorem we have $G/H\cong HK/H\cong K/(H\cap K)$ which implies that
+  $|K:K\cap H|=p$.
 \end{proof}
 
 \sk
