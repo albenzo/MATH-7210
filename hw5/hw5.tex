@@ -112,7 +112,7 @@ The Inner Automorphism group for $D_8$ is isomorphic to $\mathcal{K}_4$
   $\langle kH\rangle = G/H$. However this means that for any $g\in G$ we have $g\in k^iH$ and therefore
   $g=k^ih$ where $h\in H$. Therefore $g\in HK$ and as such $G=HK$.
 
-  By the second isomorphsim theorem we have $G/H\cong HK/H\cong K/(H\cap K)$ which implies that
+  By the second isomorphism theorem we have $G/H\cong HK/H\cong K/(H\cap K)$ which implies that
   $|K:K\cap H|=p$.
 \end{proof}
 
@@ -154,7 +154,20 @@ The Inner Automorphism group for $D_8$ is isomorphic to $\mathcal{K}_4$
     Therefore the Cartesian product of groups $G\times G'$ is a group under pointwise
     multiplication.
 
-  \item Let $M,N\trianglelefteq G$  such that $G=MN$.
+  \item Let $M,N\trianglelefteq G$  such that $G=MN$. Define a map
+    $\phi:G\rightarrow G/M\times G/N$ as $\phi(g)=(gM,gN)$. First we will show the
+    map is surjective. Let $(gM,g'N)\in G/M\times G/N$. Since $MN=G$ we can rewrite
+    $g=mn$ and $g'=m'n'$ to get
+    \[ (mnM,m'n'N)=(Mmn,m'N)=(Mn,m'N)=(nM,m'N)\]
+    using normality. Then consider $\phi(m'n)$ to get
+    \[ \phi(m'n)=(m'nM,m'nN)=(Mm'n,m'N)=(Mn,m'N)=(nM,m'N)\]
+    completing the proof that $\phi$ is surjective.
+
+    Then $\text{Ker}\phi$ is the elements $g$ such that $gM=M$ and $gN=N$ which
+    consists entirely of $g\in M\cap N$. If we apply the first isomorphism theorem
+    we get
+    \[ G/M\cap N \cong G/M\times G/N\]
+    completing the proof.
   \end{enumerate}
 \end{proof}
 
@@ -164,9 +177,28 @@ The Inner Automorphism group for $D_8$ is isomorphic to $\mathcal{K}_4$
   
 \end{problem}
 
-\begin{proof}
-  
-\end{proof}
+\begin{enumerate}
+\item The order of $\langle r^4\rangle$ is $2$ which implies that
+  $|D_{16}/\langle r^4\rangle|=\frac{|D_{16}|}{|\langle r^4\rangle|}=8$.
+\item The elements of $D_{16}/\langle r^4\rangle$ are
+  \[\{\bar{r}^0,\bar{r}^1,\bar{r}^2,\bar{r}^3,\bar{s},\bar{s}\bar{r},\bar{s}\bar{r}^2,\bar{s}\bar{r}^3\}\]
+\item The order of each element in the order listed above is
+  \[ 1,4,2,4,2,2,2,2\]
+\item $\overline{rs}=\bar{s}\bar{r}^3$\\
+  $\overline{sr^2s}=\bar{r}^2$\\
+  $\overline{s^{-1}r^{-1}sr}=\bar{r}^2$
+\item The size of $\bar{H}$ is 4 and as such is of index $2$ in $\bar{G}$ which
+  is sufficient to show the normality of $\bar{H}$. Since $\bar{H}$ is of size
+  4 and each non-identity element, $\bar{s},\bar{s}\bar{r}^2,\bar{r^2}$ is of order
+  2 it must be isomorphic to $\mathcal{V}_4$.
+
+  The preimage of $\bar{H}$ in $D_{16}$ is $\{e,r^2,r^4,r^6,s,sr^2,sr^4,sr^6\}$ which is
+  isomorphic to $D_8$.
+\item The center of $\bar{G}$ is $\bar{e},\bar{r^2}$. Then
+  the size of $\bar{G}/Z(\bar{G})$ is 4. Then our elements will be similar to
+  $\{\bar{e},\bar{r},\bar{s},\bar{rs}\}$ and since each is of order $2$ aside from the
+  identity the quotient is isomorphic to $\mathcal{V}_4$.
+\end{enumerate}
 
 \sk
 
@@ -175,7 +207,86 @@ The Inner Automorphism group for $D_8$ is isomorphic to $\mathcal{K}_4$
 \end{problem}
 
 \begin{proof}
-  
+  The proof that all subgroups of $\mathcal{Q}_8$ are normal has been copied from
+  the last homework at the end of the problem. For the isomorphism types of the
+  quotients we have:
+  \begin{itemize}
+  \item $\mathcal{Q}_8/\langle 1\rangle\cong \mathcal{Q}_8$
+  \item $\mathcal{Q}_8/\langle\mathcal{Q}_8\rangle\cong \langle 1\rangle$
+  \item $\mathcal{Q}_8/\langle-1\rangle\cong \mathcal{V}_4$. To see this note that the
+    quotient group will consist of four elements each of order two. Since
+    there are only two groups of order four and the other is cyclic it must
+    be the Klein four group.
+  \item $\mathcal{Q}_8/\langle i\rangle\cong\mathcal{Q}_8/\langle j\rangle\cong\mathcal{Q}_8/\langle k\rangle\cong \bb{Z}_2$. To
+    see this note that the order of the quotient is two and there is only one
+    group of order two.
+  \end{itemize}
+
+  \noindent Redux:
+  The subgroups of $\mathcal{Q}_8$ are $<1>,<-1>,<i>,<j>,<k>,\mathcal{Q}_8$. The
+    trivial group and $\mathcal{Q}_8$ are both normal. For the others we have
+    \begin{itemize}
+    \item[$<-1>$]
+      \[
+        \begin{array}{c|c}
+          g & g(-1)g^{-1}\\
+          \hline 
+          1 & -1\\
+          -1 & -1\\
+          i & -1\\
+          -i & -1\\
+          j & -1\\
+          -j & -1\\
+          k & -1\\
+          -k & -1\\
+        \end{array}
+      \]
+    \item[$<i>$]
+      \[
+        \begin{array}{c|c}
+          g & g(i)g\\
+          \hline 
+          1 & i\\
+          -1 & i\\
+          i & i\\
+          -i & i\\
+          j & -i\\
+          -j & -i\\
+          k & -i\\
+          -k & -i\\
+        \end{array}
+      \]
+    \item[$<j>$]
+      \[
+        \begin{array}{c|c}
+          g & g(j)g\\
+          \hline 
+          1 & j\\
+          -1 & j\\
+          i & -j\\
+          -i & -j\\
+          j & j\\
+          -j & j\\
+          k & -j\\
+          -k & -j\\
+        \end{array}
+      \]
+    \item[$<k>$]
+      \[
+        \begin{array}{c|c}
+          g & g(k)g\\
+          \hline 
+          1 & k\\
+          -1 & k\\
+          i & -k\\
+          -i & -k\\
+          j & -k\\
+          -j & -k\\
+          k & k\\
+          -k & k\\
+        \end{array}
+      \]
+    \end{itemize}
 \end{proof}
 
 \sk
