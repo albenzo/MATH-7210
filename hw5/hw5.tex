@@ -46,10 +46,29 @@
 \end{proof}
 
 
-\textbf{Elaborate on why this is the case}.
-The Automorphism group for $D_8$ is isomorphic to $D_8$ 
+We'll start with computing the inner automorphism group of $D_8$. From the prior part of the
+problem and the second isomorphism theorem we have that $\text{Inn}(D_8)\cong D_8/Z(D_8)\cong \mathcal{V}_8$.
 
-The Inner Automorphism group for $D_8$ is isomorphic to $\mathcal{K}_4$
+For the automorphism group note that since isomorphisms preserve the orders of elements the
+choices for $r$ and $s$ for any element are
+\[ r \mapsto r,r^3\quad s\mapsto s,sr,sr^2,sr^3,r^2\]
+However since mapping $s$ to $r^2$ would make the map not be surjective we can throw it out.
+This implies that $|\text{Aut}(D_8)|\leq 8$. We also know that $|\text{Inn}(D_8)|=4$ and as
+such $|D_8|$ is either 4 or 8. But if we take the map
+\[ \varphi(r)=r,\quad \varphi(s)=sr\]
+is of order 4 which means that $|\text{Aut}(D_8)|=8$.
+
+Next define $\psi(\rho)=s\rho s$. This map is of order 2 and we will show that $\varphi$ and $\psi$ fulfill the
+required relations to show isomorphism with $D_8$. Since $\varphi^4=id$ and $\psi^2=id$ we already have
+the first two. Now we must show that $(\psi\circ \varphi)^2=id$. Let $\eta\in D_8$ then we have
+\begin{align*}
+  (\psi\circ\varphi)^2(\eta) &= ssr\varphi^2(\eta)srs\\
+            &= r\varphi^2(\eta)r^{-1}\\
+\end{align*}
+If $\eta=r^i$ then we have $rr^ir^{-1}=r^i$. Otherwise if $\eta=sr^i$ then we have
+\[ r\varphi^2(sr^i)r^{-1}=rsr^{i+2}r^{-1}=rsr^{i+1}=r^{-i}s=sr^i \]
+which shows that $(\psi\circ\varphi)^2=id$ completing the proof that
+$\text{Aut}(D_8)\cong D_8$.
 
 \sk
 
