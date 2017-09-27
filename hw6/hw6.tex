@@ -27,9 +27,52 @@
   
 \end{problem}
 
-\begin{proof}
+\begin{enumerate}
+\item Let $G$ be a finite group and $H$ a subgroup of index $n$.
+  Define $N:=\bigcap_{x\in G}xHx^{-1}$ which we know is a normal subgroup
+  of $G$ contained in $H$ by a prior problem. Now let $G/N$ act
+  on $G/H$ by $gN\cdot g'H\mapsto gg'H$. To see this is well defined
+  let $g'H\in G/H$. Then
+  \[ gN\cdot g'H=gg'NH=gg'H\]
+  However this action is equivalent to a homomorphism
+  $\varphi:G/N\rightarrow S_{|G/H|=n}$ which by the first isomorphism
+  theorem implies that $G/N$ is isomorphic to some subgroup
+  of $S_n$ and as such $|G/N|=|G:N|\bigr| n!$ completing the
+  proof.
   
-\end{proof}
+\item Let $G$ be a finite group where $p$ is the smallest
+  prime factor of $|G|=n$. Let $H$ be a subgroup of $G$
+  with index $p$. Then by problem $4.2.1$ there exists a
+  subgroup $N\trianglelefteq G$ such that $N\leq H$ and
+  $|G:N|\bigr| p!$. However $|G:N|$ cannot be less than $p$
+  because if it were then with $|G|=|N||G:N|$ we would
+  have $|G|$ divisible by a smaller prime. On the other
+  hand $|G:N|$ cannot be larger than $p$. If it were
+  then $pm\bigr||G|$ where $m$ is a product of numbers
+  smaller than $p$ again contradicting that $p$ is the
+  smallest prime that divides $|G|$.
+
+  Thus $|G:N|=p$ which via Lagrange's Theorem
+  gives us that $|H|=|N|$. However since $N\leq H$
+  it must be the case that $N=H$.
+
+  Therefore $H$ is a normal subgroup.
+\item Let $G$ be a group and $H$ a subgroup of index 2.
+  Then there are only two cosets for $H$ which are
+  $H,gH$ for some  $g\in G\setminus H$. However since there are
+  only two this implies that $gH= Hg$. Since this holds
+  for all cosets of $H$ we have that $H$ is normal.
+
+  Therefore any subgroup of index 2 is normal.
+  
+\item Let $N$ be a normal subgroup and $K$ a
+  conjugacy class $K$ with some representative $k\in K$.
+  If $K\cap N=\phi$ then we're done. Otherwise suppose
+  that $K\cap N\neq \phi$. Then there is some $\alpha\in K\cap N$. Then
+  $\alpha=gkg^{-1}$ for some $g\in G$. This implies that
+  $g^{-1}\alpha g = k$ however since $\alpha\in N$ so is $g^{-1}\alpha g = k$.
+  Therefore $k\in N$ and as such $K\subset N$.
+\end{enumerate}
 
 \sk
 
