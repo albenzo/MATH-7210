@@ -80,9 +80,15 @@
   
 \end{problem}
 
-\begin{proof}
-  
-\end{proof}
+\begin{enumerate}
+\item
+\item
+  \begin{itemize}
+  \item[a)]
+  \item[b)]
+  \item[c)]
+  \end{itemize}
+\end{enumerate}
 
 \sk
 
@@ -91,7 +97,20 @@
 \end{problem}
 
 \begin{proof}
-  
+  Let $G$ be a group of order $11^213^2$. Then let $P$ be a Sylow 11-subgroup
+  and $Q$ a Sylow 13-subgroup. Then $n_{11}(G)\equiv 1\mod 11$ and $n_{13}(G)\equiv 1\mod 13$.
+  However the only number that work for $n_{11}(G)$ and $n_{13}(G)$ is 1 since
+  $n_p\bigr| |G:P|$. As such
+  the groups $P,Q$ are the only subgroups of their size. However Sylow p-subgroups
+  are closed under conjugation and as such this implies that $P$ and $Q$ are normal.
+  This means that the product $PQ$ is well defined. The order of $PQ$ is
+  $|PQ|=\frac{|P||Q|}{|P\cap Q|}$. However the intersection $P\cap Q=\{e\}$ as the order
+  of any element of $P$ or $Q$ divides the order of the subgroup and the orders of
+  $P$ and $Q$ are relatively prime. As such $|PQ|=|P||Q|=11^213^2=|G|$ and so
+  $PQ=G$. However since $P,Q$ are order of a prime squared they are Abelian
+  and the normality implies $PQ=QP$ which shows that $G$ is Abelian.
+
+  Therefore any group of order $11^213^2$ is Abelian.
 \end{proof}
 
 \sk
@@ -101,7 +120,11 @@
 \end{problem}
 
 \begin{proof}
-  
+  Let $|G|=77=7\cdot 11$. Then there are subgroups with $|H|=7$  and
+  $|K|=11$. Since they are of prime order they are cyclic with
+  generators $h$ and $k$ respectively. However since $7$ and $11$
+  are relatively prime $hk$ has order $7\cdot 11=77$ which implies that
+  $G$ is cyclic.
 \end{proof}
 
 \sk
@@ -111,7 +134,10 @@
 \end{problem}
 
 \begin{proof}
-  
+  Since $30=2\cdot 3\cdot 5$ there are subgroups of size $3$ and $5$ which we'll
+  call $H$ and $K$ respectively. However since $H$ and $K$ are of
+  prime order they are cyclic and as such $\langle h\rangle=H$ and $\langle k\rangle= K$. Since
+  the orders of $h,k$ are relatively prime the order of $hk$ is fifteen.
 \end{proof}
 
 \sk
