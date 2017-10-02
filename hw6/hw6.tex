@@ -81,12 +81,44 @@
 \end{problem}
 
 \begin{enumerate}
-\item
+\item The conjugacy classes of $\mathcal{Q}_8$ are
+  \[ \{1\},\{-1\},\{i,-i\},\{j,-j\},\{k,-k\} \]
+
+  The conjugacy classes for $D_8$ are
+  \[ \{e\},\{s\},\{r,r^3\},\{r^2\}\]
 \item
   \begin{itemize}
-  \item[a)]
-  \item[b)]
-  \item[c)]
+  \item[a)] Let $c=(c_1\ \ldots\ c_t)\in S_n$ and $\sigma\in S_n$. Then let
+    $k=\sigma(c_i)$ for some $i$. Then
+    \[ \sigma c\sigma^{-1}(k)=\sigma c\sigma^{-1}(\sigma(c_i))=\sigma c(c_i)=\sigma(c_{i+1})\]
+    Next suppose that $k\neq\sigma(c_i)$ for any $i$. Then
+    \[ \sigma c\sigma^{-1}(k)=\sigma c(\sigma^{-1}(k))=\sigma(\sigma^{-1}(k))=k\]
+    Which implies that $\sigma c\sigma^{-1}=(\sigma(c_1)\ \ldots\ \sigma(c_t))$.
+  \item[b)] Given a $t$-cycle $c$ we can send it to any other
+    $t$-cycle by conjugation. This means that the conjugacy
+    class for $c$ is the permutations of $t$ numbers selected
+    from $1$ through $n$ up to rotation. The permutations
+    number $\frac{n!}{(n-t)!}$ and we account for rotation
+    by $\frac{n!}{(n-t)!t}$.
+
+    Given an orbit we have the formula $|\mathcal{O}|=\frac{|G|}{|\text{Stab}}$.
+    If we act on $S_n$ by conjugation then the stabilizer for a $t$-cycle is
+    the centralizer. Using the formula for any given $t$-cycle $c$ we have
+    \[ \frac{n!}{(n-t)!t}=\frac{n!}{|C_{S_n}(c)}\]
+    which implies that $|C_{S_n}(c)|=(n-t)!t$.
+  \item[c)] The conjugacy classes of $A_5$ are
+    \begin{enumerate}
+    \item $()$ of order 1.
+    \item $(a\ b)(c\ d)$ of order 15.
+    \item $(a\ b\ c)$ of order 20.
+    \item The 5-cycle conjugacy class containing $(1\ 2\ 3\ 4\ 5)$ of order 12.
+    \item The 5-cycle conjugacy class containing $(2\ 1\ 3\ 4\ 5)$ of order 12.
+    \end{enumerate}
+
+    Since normal subgroups are the unions of conjugacy classes in order for $A_5$ to have a nontrivial normal
+    subgroup we would require for us to be able to add a combinations of conjugacy classes to get
+    a number that divides 60. However there is no combination that does that.
+    Therefore $A_5$ has no normal subgroups and as such is simple.
   \end{itemize}
 \end{enumerate}
 
