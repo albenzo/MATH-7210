@@ -27,9 +27,15 @@
   Find the isomorphism classes of Abelian groups of order 200.
 \end{problem}
 
-\begin{proof}
-  
-\end{proof}
+The isomorphism classes of Abelian groups of order 200 are:
+\begin{enumerate}
+\item $\bb{Z}_{200}$
+\item $\bb{Z}_{40}\times\bb{Z}_{5}$
+\item $\bb{Z}_{100}\times\bb{Z}_{2}$
+\item $\bb{Z}_{20}\times\bb{Z}_{10}$
+\item $\bb{Z}_{50}\times\bb{Z}_{2}\times\bb{Z}_{2}$
+\item $\bb{Z}_{10}\times\bb{Z}_{10}\times\bb{Z}_{2}$
+\end{enumerate}
 
 \sk
 
@@ -39,9 +45,14 @@
   \[ G=\bb{Z}_2\times\bb{Z}_2\times\bb{Z}_2\times\bb{Z}_9\times\bb{Z}_5\times\bb{Z}_5\]
 \end{problem}
 
-\begin{proof}
-  
-\end{proof}
+If we combine relative prime numbers and rearrange we get
+\[ G\cong \bb{Z}_{90}\times \bb{Z}_{10}\times \bb{Z}_2\]
+giving us $90,10,2$ for the invariant factors.
+
+We can also write $G$ as
+$G\cong (\bb{Z}_2)^3\times(\bb{Z}_6)^5\times\bb{Z}_9$
+which gives us the elementary divisors
+$2^1,2^1,2^1,5^1,5^1,3^2$.
 
 \sk
 
@@ -63,7 +74,12 @@
 \end{problem}
 
 \begin{proof}
-  
+  The formula for the order of the product of groups is
+  $|HK|=\frac{|H||K|}{|H\cap K|}$. As such the only way for
+  $|G|=|N_1|\cdots|N_n|$ would be for $N_i\cap N_j=\{e\}$ for $i\neq j$.
+  However this is equivalent to condition $2$ of Proposition
+  $5.13$. Therefore $G$ is the internal direct product of
+  $N_1,\ldots,N_n$.
 \end{proof}
 
 \sk
@@ -81,21 +97,81 @@
 \end{problem}
 
 \begin{proof}
-  
+  \begin{enumerate}
+  \item[$1\rightarrow 2$:] Since $\phi$ is an isomorphism, and thus surjective
+    for any $g$ there is a pair $(h,k)$ such that $g=hk$.
+    Writing $g=hk$ is unique due to $\phi$ being injective.
+  \item[$2\rightarrow 3$:] Since we can write $g=hk$ for any $G$ we
+    know that $G=HK$. To show that $H\cap K = \{e\}$ note
+    that we can write $h=he$ and $k=ek$ for elements of
+    $H$ and $K$. If $h=k_1k_2$ then it would have
+    two representations $h=he=ek_1k_2$ which would be a contradiction.
+  \item[$3\rightarrow 1$:] First we will show that $\phi(h,k)=hk$ is a homomorphism.
+    Let $(h_1,k_1),(h_2,k_2)\in H\rtimes_\varphi K$. Then
+    \[ \phi((h_1,k_1)(h_2,k_2))=\phi(h_1(k_1\cdot h_2),k_1k_2)=h_1\varphi(k_1)(h_2)k_1k_2
+      =h_1k_1h_2k_2^{-1}k_1k_2=h_1k_1h_2k_2 =\phi(h_1,k_1)\phi(h_2,k_2) \]
+    completing the proof that $\phi$ is a homomorphism.
+
+    We know that $\phi$ is surjective as $G=HK$ and as such any element
+    $g=hk$ for some $h\in H$ and $k\in K$.
+
+    To show that $\phi$ is injective suppose that $\phi(h,k)=e$. Then
+    $h^{-1}=k$ but since $H$ and $K$ have trivial intersection
+    this means that $h=k=e$. Since the kernel of $\phi$ is trivial
+    the map $\phi$ is injective.
+
+    Therefore the map $\phi$ is an isomorphism.
+  \end{enumerate}
 \end{proof}
 
 \sk
 
 \begin{problem}[5.5.4]
-  
+  \begin{enumerate}
+  \item[(a)] For any positive integer $n$, prove that $\text{Aut}(\bb{Z}_n)\cong \bb{Z}_n^*$.
+  \item[(b)] For any primes $p<q$, if $p|q-1$, there exists a monomorphism
+    $\varphi:\bb{Z}_p\rightarrow \text{Aut}(\bb{Z}_q)$ and $\bb{Z}_q\rtimes_\varphi \bb{Z}_p$ is a non-abelian
+    group of order $pq$.
+  \end{enumerate}
 \end{problem}
 
 \begin{proof}
   \begin{enumerate}
-  \item[(a)] For any positive integer $n$, prove that $\text{Aut}(\bb{Z}_n)\cong \bb{Z}_n^*$.
-  \item[(b)] For any primes $p<q$, if $p|q-1$, there exists a monomorphism
-    $\varphi:\bb{Z}_p\rightarrow \text{Aut}(\bb{Z}_q)$ and $\bb{Z}_q\rtimes_\varphi \bb{Z}_p$ is a non-abelain
-    group of order $pq$.
+  \item[(a)] Define $\varphi:\bb{Z}_n^*\rightarrow \text{Aut}(\bb{Z}_n)$ as $m\mapsto \phi_m$ where $\phi_m(x)=mx$
+    with multiplication done modulo $n$. To show that this is a homomorphism
+    consider $m_1,m_2\in\bb{Z}_n^*$. Then
+    \[ \varphi(m_1m_2)= \phi_{m_1m_2}\]
+    For any $x\in \bb{Z}_n$ we have
+    \[ \phi_{m_1m_2}(x)=(m_1m_2)x=m_1(m_2x)=m_1\phi_{m_2}(x)=\phi_{m_1}\circ\phi_{m_2}(x) \]
+    Which implies that
+    \[ \varphi(m_1m_2)=\phi_{m_1m_2}=\phi_{m_1}\circ\phi_{m_2}=\varphi(m_1)\circ\varphi(m_2) \]
+    Therefore the map $\varphi$ is a homomorphism.
+
+    To show it is injective suppose that for $m\in\bb{Z}_n^*$ we had
+    $\phi_m(x)=x$ for all $x\in\bb{Z}_n$. Then $mx=x$ for
+    all $x$ which would imply that $m=1$. Therefore the kernel
+    of $\varphi$ is trivial and as such $\varphi$ is injective.
+
+    Finally to show that it is surjective consider $f\in \text{Aut}(\bb{Z}_n)$. Then
+    \textbf{Finish this.}
+  \item[(b)] Since $p|q-1$ we know that $pk+1=q$ for some
+    $k\in\bb{Z}^+$. Define a map $\varphi:\bb{Z}_p\rightarrow \text{Aut}(\bb{Z}_q)$ via
+    $i\mapsto \phi_{2^{ik}}$ where $\phi_{2^{ik}}(x)=2^{ik}x$. To see that this is a
+    homomorphism let $x\in \bb{Z}_q$ and $i,j\in \bb{Z}_p$
+    \[ \varphi(i+j)(x)=\phi_{i+j}(x)=2^{k(i+j)}x=2^{ki}2^{kj}x=\phi_{i}\circ\phi_j(x)=\varphi(i)\circ\varphi(j) \]
+    Therefore $\varphi$ is a group homomorphism.
+
+    To see that it is injective suppose that $\phi_i(x)=x$. Then
+    $2^ix=x$ which implies that $2^i=1$ and that $i=0$. Since
+    the kernel is trivial $\varphi$ is injective.
+
+    By definition the group $|\bb{Z}_q\rtimes_\varphi\bb{Z}_p$ has order $pq$.
+    To show that it is not Abelian consider $(g,n)$ and $(h,m)$ where
+    $m\neq n$. Then
+    \[ (g,n)(h,m)=(gh2^{nk},n+m)\]
+    and
+    \[ (h,m)(g,n)=(gh2^{mk},m+n)\]
+    which are only equal if $m=n$.
   \end{enumerate}
 \end{proof}
 
@@ -105,9 +181,13 @@
   Classify groups of order 28 (there are four isomorphism types).
 \end{problem}
 
-\begin{proof}
-  
-\end{proof}
+The different groups of order 28 are:
+\begin{enumerate}
+\item $\bb{Z}_{28}$ cyclic
+\item $\bb{Z}_{14}\times \bb{Z}_2$ product and abelian
+\item $D_{28}$ Not abelian
+\item $\bb{Z}_7\rtimes\bb{Z}_4$ \textbf{Put in a reason}
+\end{enumerate}
 
 \sk
 
