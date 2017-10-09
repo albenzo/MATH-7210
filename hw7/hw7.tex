@@ -67,7 +67,7 @@ $2^1,2^1,2^1,5^1,5^1,3^2$.
   $S$ by
   \[ (x_1,\ldots,x_p)\mapsto(x_{\sigma(1)},\ldots,x_{\sigma(p)})\]
   Then for an orbit $\mathcal{O}_x$ we have
-  $|\mathcal{O}_x|=\frac{|H|}{\text{Stab}_H(x)}$. Since the
+  $|\mathcal{O}_x|=\frac{|H|}{|\text{Stab}_H(x)|}$. Since the
   size of the orbit needs to divide $|H|$ it will
   either be of size $p$ or of size $1$. The only scenario where
   it will be of size one is if $x=(x_0,\ldots,x_0)$ in which
@@ -110,7 +110,7 @@ $2^1,2^1,2^1,5^1,5^1,3^2$.
   \end{enumerate}
 \end{problem}
 
-\begin{proof}
+\begin{proof}\ \\    
   \begin{enumerate}
   \item[$1\rightarrow 2$:] Since $\phi$ is an isomorphism, and thus surjective
     for any $g$ there is a pair $(h,k)$ such that $g=hk$.
@@ -118,8 +118,10 @@ $2^1,2^1,2^1,5^1,5^1,3^2$.
   \item[$2\rightarrow 3$:] Since we can write $g=hk$ for any $G$ we
     know that $G=HK$. To show that $H\cap K = \{e\}$ note
     that we can write $h=he$ and $k=ek$ for elements of
-    $H$ and $K$. If $h=k_1k_2$ then it would have
-    two representations $h=he=ek_1k_2$ which would be a contradiction.
+    $H$ and $K$. Suppose that $g\in H\cap K$. Then we could write
+    $g=he$ and $g=ek$ for $h\in H$ and $k\in K$. However we know
+    that writing $g$ this way is unique which implies that
+    $h=e$ and $k=e$ and as such $g=ee=e$. Therefore $H\cap K=\{e\}$
   \item[$3\rightarrow 1$:] First we will show that $\phi(h,k)=hk$ is a homomorphism.
     Let $(h_1,k_1),(h_2,k_2)\in H\rtimes_\varphi K$. Then
     \[ \phi((h_1,k_1)(h_2,k_2))=\phi(h_1(k_1\cdot h_2),k_1k_2)=h_1\varphi(k_1)(h_2)k_1k_2
@@ -180,13 +182,14 @@ $2^1,2^1,2^1,5^1,5^1,3^2$.
     $2^ix=x$ which implies that $2^i=1$ and that $i=0$. Since
     the kernel is trivial $\varphi$ is injective.
 
-    By definition the group $|\bb{Z}_q\rtimes_\varphi\bb{Z}_p$ has order $pq$.
+    By definition the group $\bb{Z}_q\rtimes_\varphi\bb{Z}_p$ has order $pq$.
     To show that it is not Abelian consider $(g,n)$ and $(h,m)$ where
     $m\neq n$. Then
     \[ (g,n)(h,m)=(gh2^{nk},n+m)\]
     and
     \[ (h,m)(g,n)=(gh2^{mk},m+n)\]
-    which are only equal if $m=n$.
+    which are only equal if $m=n$. Therefore the group
+    $\bb{Z}_q\rtimes_\varphi\bb{Z}_p$ is not abelian with order $pq$.
   \end{enumerate}
 \end{proof}
 
