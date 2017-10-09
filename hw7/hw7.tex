@@ -61,8 +61,22 @@ $2^1,2^1,2^1,5^1,5^1,3^2$.
 \end{problem}
 
 \begin{proof}
-  Let $G$ be a finite group and $p$ a prime factor of $|G|$. Prove that the
-  number of order $p$ elements in $G$ is congruent to $-1$ modulo $p$.
+  Let $S=\{(x_1,\ldots,x_p)|x_i\in G,\prod_ix_i=e\}$. The size of $S$ is
+  $|G|^{p-1}$ as the last element must be the inverse of the first
+  $p-1$. Let $H$ be the set of $p-$cycles. Then let $H$ act on
+  $S$ by
+  \[ (x_1,\ldots,x_p)\mapsto(x_{\sigma(1)},\ldots,x_{\sigma(p)})\]
+  Then for an orbit $\mathcal{O}_x$ we have
+  $|\mathcal{O}_x|=\frac{|H|}{\text{Stab}_H(x)}$. Since the
+  size of the orbit needs to divide $|H|$ it will
+  either be of size $p$ or of size $1$. The only scenario where
+  it will be of size one is if $x=(x_0,\ldots,x_0)$ in which
+  case either $x_0=e$ or $x_0^p=e$. Since $|S|=\sum|\mathcal{O}_x|$
+  we have that $|S|=kp+m+1$ for some $k$ and where $m$ is the number
+  of order $p$ elements. Take the equation modulo
+  $p$ and we get
+  \[ -1 \equiv m\mod p\]
+  completing the proof.
 \end{proof}
 
 \sk
@@ -153,7 +167,8 @@ $2^1,2^1,2^1,5^1,5^1,3^2$.
     of $\varphi$ is trivial and as such $\varphi$ is injective.
 
     Finally to show that it is surjective consider $f\in \text{Aut}(\bb{Z}_n)$. Then
-    \textbf{Finish this.}
+    the generator $1$ is sent to $f(1)=m$. Since $f$ is a homomorphism we know that
+    $f(k)=mk\mod n$. Therefore $f=\phi_m$ and $\varphi$ is surjective.
   \item[(b)] Since $p|q-1$ we know that $pk+1=q$ for some
     $k\in\bb{Z}^+$. Define a map $\varphi:\bb{Z}_p\rightarrow \text{Aut}(\bb{Z}_q)$ via
     $i\mapsto \phi_{2^{ik}}$ where $\phi_{2^{ik}}(x)=2^{ik}x$. To see that this is a
@@ -183,10 +198,11 @@ $2^1,2^1,2^1,5^1,5^1,3^2$.
 
 The different groups of order 28 are:
 \begin{enumerate}
-\item $\bb{Z}_{28}$ cyclic
-\item $\bb{Z}_{14}\times \bb{Z}_2$ product and abelian
-\item $D_{28}$ Not abelian
-\item $\bb{Z}_7\rtimes\bb{Z}_4$ \textbf{Put in a reason}
+\item $\bb{Z}_{28}$ cyclic.
+\item $\bb{Z}_{14}\times \bb{Z}_2$ product and abelian.
+\item $D_{28}$ Not abelian with $2$ elements of order $2$.
+\item $D_{14}\times\bb{Z}_2$ Not abelian and has $3$ elements of order
+  $2$.
 \end{enumerate}
 
 \sk
