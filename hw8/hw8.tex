@@ -43,7 +43,7 @@
     $H_0\trianglelefteq \ldots\trianglelefteq H_m=K$ we can stitch
     them together to get
     \[ \{e\}=H_0\trianglelefteq\ldots\trianglelefteq H_m=K=G_0\trianglelefteq
-      \ldots\trianglelefteq\]
+      \ldots\trianglelefteq G_n=G\]
     which is a solvability series for $G$.
 
     Therefore the group $G$ is solvable.
@@ -70,22 +70,23 @@
   composition series fulfills the condition to show that $G$ is solvable as
   cyclic groups are abelian.
 
-  Otherwise suppose that $G$ is solvable. Then there is a normal series
-  $\{e\}=G_0\trianglelefteq \ldots\trianglelefteq G_n=G$ such that the factors
+  Otherwise suppose that $G$ is solvable. Since $G$ is finite there is a normal series
+  \\$\{e\}=G_0\trianglelefteq \ldots\trianglelefteq G_n=G$ such that the factors
   are finite and abelian. We can assume that the factors are not trivial as this
   would signify that $G_i=G_{i+1}$ for some $i$ and then we could remove $G_{i+1}$
   and the normal series would still witness solvability. Now suppose that
   $G_{i+1}/G_i$ was not simple. Then there would exist a normal subgroup
-  $K'=K/G_i\trianglelefteq G_{i+1}/G_i$. This implies that $G_i\trianglelefteq K$
+  $K'=K/G_i\trianglelefteq G_{i+1}/G_i$ where $K$ is not trivial.
+  This implies that $G_i\trianglelefteq K$
   and that $K\trianglelefteq G_{i+1}$. Since $K/G_i$ is a subgroup of an abelian
   group we know that it is abelian and $G_{i+1}/K$ will also be abelian because
   $G_i\leq K$ and this implies that $K$ contains the commutator. Thus we have a new
-  series $G_o\trianglelefteq\ldots\trianglelefteq G_i\trianglelefteq K
+  normal series $G_o\trianglelefteq\ldots\trianglelefteq G_i\trianglelefteq K
   \trianglelefteq G_{i+1}\trianglelefteq\ldots\trianglelefteq G_n$. Now we can
   repeat this process until there are no non-simple factors left in our series.
   This process will terminate as $G$ is finite.
 
-  This gives us a normal series $H_0\trianglelefteq\ldots\trianglelefteq H_m$
+  This gives us a new normal series $H_0\trianglelefteq\ldots\trianglelefteq H_m$
   wherein the factors are finite, abelian, non-trivial, and simple. Since
   the factors are non-trivial and simple this normal series is in fact
   a composition series. Moreover finite, abelian, and simple imply cyclic
@@ -139,7 +140,7 @@
     normal subgroup. Thus
     \[ \overline{\phi}\circ\pi\circ i(s)=\overline{\phi}(i(s)N(R))= \tilde{\phi}\circ i(s) \]
     and by definition of the free group we know that
-    $\tilde{\phi}\circ i(s)=\phi$
+    $\tilde{\phi}\circ i(s)=\phi(s)$ for $s\in S$
     completing the proof.
   \end{enumerate}
 \end{proof}
@@ -237,18 +238,20 @@ Therefore $G\cong S_3$.
     $\frac{1}{f(x)}$. So $C([0,1])^X=\{f|f(x)\neq 0,x\in[0,1]\}$ since this will
     garentee a well defined inverse.
 
-    For zero divisors it will be the set of functions where there is at least
-    one value $x\in[0,1]$ such that $f(x)=0$ and there is an open neighborhood
-    $x\in(a,b)\subseteq[0,1]$ such that $f(y)=0$ for all $y\in(a,b)$. If a function is
-    in this form we can define its multiplicand to zero by taking a function
-    that is zero everywhere but the interval and attaching a continuous
-    nonzero portion to the interval. For the other direction suppose that
-    all the zeros of $f$ are isolated. Then any multiplicand to get $f$ to
-    zero would have to be zero everywhere except that isolated point breaking
-    continuity.
+    A function $f\in C([0,1])$ will be a zero divisor if and only if
+    the set $Z(f)=\{x\in[0,1]|f(x)=0\}$ contains at least one interval.
+    To see this note that if $Z(f)$ consisted solely of isolated points
+    then on at least one zero $f(x)=0$ we would be required to multiply by a function
+    $g(x)$ such that $g(y)=0$ for $y\in(x-\epsilon,x+\epsilon)$ for $\epsilon$ sufficiently small
+    but $g(x)\neq 0$ which would break continuity.
 
-    Therefore $Z(C[0,1])$ is the set of continuous functions such that
-    at least one zero is not isolated.
+    Otherwise if $x\in[0,1]$ is a zero that is not isolated then there exists
+    an open $(a,b)\subseteq[0,1]$ such that $f((a,b))=\{0\}$. Then we can create a function
+    $g$ such that $g(y)=0$ for $y\in[0,1]\setminus(a,b)$ and $g$ is some continuous nonzero
+    function on $(a,b)$. Then $fg(x)=0$ for all $x\in [0,1]$.
+
+    Therefore $Z(C[0,1])$ is the set of continuous functions such that the
+    zero set contains an interval.
   \item We will show that $\mathcal{Q}(\sqrt{D})$ is a field by showing that
     we have additive and multiplicative identities and that the operations are
     associative, commutative, distribute, and have inverses.
@@ -281,7 +284,7 @@ Therefore $G\cong S_3$.
     \end{itemize}
     Therefore $\mathcal{Q}(\sqrt{D})$ is a field.
   \item Suppose that $n$ is prime. Then for any $x\in \bb{Z}_n\setminus\{0\}$ the $\gcd(x,n)=1$
-    which from a prior homework means that $x\in\bb{Z}^X$ and as such is not a zero
+    which from a prior homework means that $x\in\bb{Z}^X_n$ and as such is not a zero
     divisor. Thus $\bb{Z}_n$ is an integral domain if $n$ is prime.
 
     Otherwise suppose that $n$ is not prime. Then there exist $ab=n$
@@ -315,7 +318,7 @@ Therefore $G\cong S_3$.
     Then if $a,b,c,d\in \bb{Z}$ then for addition
     $(a+b\sqrt{D})+(c+d\sqrt{D})=(a+b)+(c+d)\sqrt{D}\in\bb{Z}[\sqrt{D}]$.\\
     For multiplication we have
-    $(a+b\sqrt{D})(c+d\sqrt{D})=(ac+Dbd)+(ad+bc)\sqrt{D}\in\bb{Z}[\sqrt{D}]$
+    $(a+b\sqrt{D})(c+d\sqrt{D})=(ac+Dbd)+(ad+bc)\sqrt{D}\in\bb{Z}[\sqrt{D}]$.
     Finally if $-a,-b\in\bb{Z}$ so it is closed under addition, multiplication,
     and additive inverses. Therefore $\bb{Z}[\sqrt{D}]$ is a subring of
     $\mathcal{Q}(\sqrt{D})$. Moreover because $\mathcal{Q}(\sqrt{D})$ is a field
