@@ -61,19 +61,180 @@
 
 \begin{proof}
   \begin{enumerate}
-  \item
-  \item
+  \item In order to show that $F[[x]]$ is an integral domain we
+    must show that addition is associative, commutative, has identity,
+    and has inverse. That multiplication is associative, commutative,
+    has identity, and that it distributes
+    over addition. For each of the following statements consider
+    $\sum_{n=0}^\infty a_n,\sum_{n=0}^\infty b_n,\sum_{n=0}^\infty c_n\in F[[x]]$.
+    \begin{itemize}
+    \item For additive identity we let all terms be $0$. Then
+      \[ \sum_{n=0}^\infty a_nx^n +\sum_{n=0}^\infty 0x^n=\sum_{n=0}^\infty (a_n+0)x^n=\sum_{n=0}^\infty 0x^n+\sum_{n=0}^\infty a_nx^n=
+        \sum_{n=0}^\infty a_nx^n \]
+    \item For additive associativity we have
+      \[ \left(\sum_{n=0}^\infty a_nx^n + \sum_{n=0}^\infty b_nx^n\right) \sum_{n=0}^\infty c_nx^n
+        = \sum_{n=0}^\infty ((a_n+b_n)+c_n)x^n=\sum_{n=0}^\infty (a_n+(b_n+c_n))x^n\]\[
+        = \sum_{n=0}^\infty a_nx^n+\left(\sum_{n=0}^\infty b_nx^n+\sum_{n=0}^\infty c_nx^n\right)\]
+    \item For additive commutativity we have
+      \[ \sum_{n=0}^\infty a_nx^n + \sum_{n=0}^\infty b_nx^n=\sum_{n=0}^\infty (a_n+b_n)x^n
+        = \sum_{n=0}^\infty (b_n+a_n)x^n=\sum_{n=0}^\infty b_nx^n+\sum_{n=0}^\infty a_nx^n\]
+    \item For additive inverse we have
+      \[ \sum_{n=0}^\infty a_nx^n + \sum_{n=0}^\infty (-a_n)x^n = \sum_{n=0}^\infty (a_n-a_n)x^n=
+        \sum_{n=0}^\infty 0x^n \]
+    \item For multiplicative identity let $b_0=1$ and $b_n=0$ for $n>0$. Then
+      \[ \sum_{n=0}^\infty a_nx^n\cdot\sum_{n=0}^\infty b_nx^n=  \sum_{n=0}^\infty\left(\sum_{i+j=n}a_ib_j\right)x^n\]
+      However since $b_n=0$ for $n>0$ the only non-zero term in the inner sum
+      will be when $i=n$ and $j=0$. Thus
+      \[ \sum_{n=0}^\infty\left(\sum_{i+j=n}a_nb_n\right)x^n=\sum_{n=0}^\infty a_nx^n \]
+    \item For associativity of multiplication we have
+      \[ 
+        \left(
+          \sum_{n=0}^\infty a_nx^n\cdot \sum_{n=0}^\infty b_nx^n
+        \right)\cdot \sum_{n=0}^\infty c_nx^n
+      = 
+      \left(
+        \sum_{n=0}^\infty 
+        \left(
+          \sum_{i+j=n}a_ib_j
+        \right)x^n
+      \right)\cdot \sum_{n=0}^\infty c_nx^n\]\[
+      = \sum_{n=0}^\infty 
+      \left(
+        \sum_{i+j=n}
+        \left(
+          \sum_{h+k=i}a_hb_k
+        \right) c_j
+      \right)x^n \]\[
+    = \sum_{n=0}^\infty 
+    \left(
+      \sum_{i+j=n}a_i
+      \left(
+       \sum_{j+k=j} b_hc_k
+      \right)
+    \right)x^n
+    =
+    \sum_{n=0}^\infty a_nx^n\cdot 
+    \left(
+      \sum_{n=0}^\infty b_nx^n\cdot \sum_{n=0}^\infty c_nx^n
+    \right)
+  \]
+    \item For commutativity of multiplication we have
+      \[ \sum_{n=0}^\infty a_nx^n\cdot\sum_{n=0}^\infty b_nx^n=\sum_{n=0}^\infty 
+        \left(
+          \sum_{i+j=n}a_ib_j
+        \right)x^n
+      =\sum_{n=0}^\infty 
+        \left(
+          \sum_{i+j=n}b_ia_j
+        \right)x^n
+      = \sum_{n=0}^\infty b_nx^n\cdot \sum_{n=0}^\infty a_nx^n\]
+    \item For distributivity we have
+      \[ \sum_{n=0}^\infty c_nx^n
+        \left(
+          \sum_{n=0}^\infty a_nx^n+\sum_{n=0}^\infty b_nx^n
+        \right)
+        =
+        \sum_{n=0}^\infty c_nx^n\cdot \sum_{n=0}^\infty (a_n+b_n)x^n \]\[
+        =
+      \sum_{n=0}^\infty 
+      \left(
+        \sum_{i+j=n}c_i(a_j+b_j)
+      \right)x^n
+      =
+      \sum_{n=0}^\infty 
+    \left(
+      \sum_{i+j=n}c_ia_j+c_ib_j
+    \right)x^n \]\[
+    =
+    \sum_{n=0}^\infty 
+    \left(
+      \sum_{i+j=n}c_ia_j+\sum_{i+j=n}c_ib_j
+    \right)x^n
+    =
+    \sum_{n=0}^\infty
+    \left(
+      \sum_{i+j=n}c_ia_j
+    \right)x^n
+    +
+    \sum_{n=0}^\infty
+    \left(
+      \sum_{i+j=n}c_ib_j
+    \right)x^n \]\[
+    =
+    \sum_{n=0}^\infty c^nx^n\cdot\sum_{n=0}^\infty a_nx^n+\sum_{n=0}^\infty c_nx^n\cdot\sum_{n=0}^\infty b_nx^n
+  \]
+    \end{itemize}
+
+    To show that $F[[x]]$ is an integral domain we must show that
+    $F[[x]]$ has no zero-divisors. Suppose that $\sum_{n=0}^\infty a^nx^n\cdot\sum_{n=0}^\infty b_nx^n=0$.
+    Without loss of generality assume that both $a_0$ and $b_0$ are not $0$.
+    If the first $k$ terms consisted of only zeros we could factor out $x^k$ and
+    proceed with this assumption. Then the zero term would
+    be $\sum_{i+j=0}a_ib_j=a_0b_0=0$. Since $F$ is a field either $a_0$ or $b_0$ are $0$.
+    Without loss of generality assume that it's $b_0$. We then proceed by induction.
+    Assume that $b_k=0$ for $k\leq m$. Then consider the term $b_{m+1}$. The sum
+    for the $m+1$ coefficient is $\sum_{i+j=m+1}a_ib_j$. However by our inductive
+    hypothesis $b_k=0$ for $k\leq m$. Which leaves us with $a_0b_{m+1}=0$. However
+    we already assumed that $a_0\neq 0$ which implies that $b_{m+1}=0$.
+
+    Therefore, by induction, all terms of $\sum_{n=0}^\infty b_nx^n$ are zero. As such
+    the only way that $\sum_{n=0}^\infty a^nx^n\cdot\sum_{n=0}^\infty b_nx^n=0$ can hold is if one of
+    the series is zero.
+
+    Therefore since $F[[x]]$ is a commutative ring with no zero divisors it is
+    an integral domain.
+
+    Now we will show that a series $\sum_{n=0}^\infty a_nx^n$ is a unit if and only if
+    $a_0\neq 0$. First suppose that $\sum_{n=0}^\infty a_nx^n$ is a unit. Then there
+    is a series such that $\sum_{n=0}^\infty a_nx^n\cdot\sum_{n=0}^\infty b_nx^n=1$. However this
+    implies that $a_0b_0=1$ and the only way this can occur is if $a_0$ is also
+    a unit in $F$. However since $F$ is a field this will hold so long as $a_0\neq 0$.
+
+    Now suppose that $\sum_{n=0}^\infty a_nx^n$ is a series such that $a_0\neq 0$. Then define
+    $b_0=a_0^{-1}$ and $b_n=a_0^{-1}(-\sum_{i+j=n-1}a_ib_j)$ for $n>0$. This will
+    cause the sum $\sum_{i+j=n}a_ib_j=0$ for all $n>0$. Thus
+    \[ \sum_{n=0}^\infty a_nx^n\cdot \sum_{n=0}^\infty b_nx^n=\sum_{n=0}^\infty\left(\sum_{i+j=n}a_ib_j\right)x^n =1\]
+    Therefore $f\in F[[x]]$ is a unit if and only if the constant term is nonzero.
+  \item Let $S$ be a subring of $R$. Then consider the matrices
+    $A,B\in M_n(S)$. Let $A_{ij}$ denote the $ij$th entry in the
+    matrix.
+    
+    For $A+B$ we have $(A+B)_{ij}=A_{ij}+B_{ij}\in S$ since $S$
+    is a subring. Since this hold for all entries we have
+    that $A+B\in M_n(S)$.
+
+    For $AB$ we have $(AB)_{ij}=\sum_{k=1}^n A_{ik}B_{kj}$.
+    However each $A_{ik},B_{kj}\in S$ since $S$ is a subring
+    which implies that $(AB)_{ij}\in S$ and therefore $AB\in M_n(S)$.
+    Since $M_n(S)$ is closed under multiplication and addition
+    it is a subring of $M_n(R)$.
   \item
     \begin{enumerate}
     \item Let $g\in G$. Then it has an inverse $g^{-1}\in G$
       for which both $g,g^{-1}\in R[G]$. Thus we have
       $gg^{-1}=e=1\in R[G]$ which shows that $g$ is a unit of $R[G]$.
-    \item
-    \item
+    \item Let $R$ be a ring with a non-trivial unit $r\in R$. Then
+      $rg\cdot r^{-1}g^{-1}=1e$ which implies that $rg\notin G$ but that
+      $rg\in R[G]^X$. Therefore $G$  may not equal $R[G]^X$.
+    \item Let $S$ be a subring of $R$ and let $f:=\sum_{g\in G}a_gg,g:=\sum_{g\in G}b_gg\in S[G]$.
+
+      For $f+g$ we have $f+g=\sum_{g\in G}(a_g+b_g)g$ and since $a_g+b_g\in S$ due to
+      $S$ being a subring $f+g\in S[G]$.
+
+      For $fg$ we have $fg=\sum_{k\in G}\left(\sum_{gh=k}a_gb_h\right)k$. However
+      since $S$ is a subring $\sum_{gh=K}(a_gb_h)\in S$ as it is a sum of terms in $S$.
+      It then follows that $fg\in S[G]$.
+
+      Therefore if $S$ is a subring of $R$ then $S[G]$ is a subring of $R[G]$.
     \end{enumerate}
   \item
     \begin{enumerate}
-    \item
+    \item Let $\sum_{g\in G}a_gg\in R[G]$. Then
+      \[ \sum_{g\in G}a_gg\cdot\sum_{g\in G}g=\sum_{k\in G}\left(\sum_{gh=k}a_g\right)k \]
+        Since rings are associative under addition we have
+      \[ \sum_{k\in G}\left(\sum_{gh=k}a_g\right)k= \sum_{k\in G}\left(\sum_{gh=k}a_h\right)k
+        = \sum_{g\in G}g\cdot\sum_{g\in G}a_gg\sum\]
+      Therefore $\Lambda$ is in the center of $R[G]$.
     \item
     \item
     \end{enumerate}
@@ -142,8 +303,6 @@
 \begin{proof}
   
 \end{proof}
-
-\sk
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
