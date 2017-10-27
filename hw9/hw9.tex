@@ -91,43 +91,43 @@
         \left(
           \sum_{n=0}^\infty a_nx^n\cdot \sum_{n=0}^\infty b_nx^n
         \right)\cdot \sum_{n=0}^\infty c_nx^n
-      = 
-      \left(
-        \sum_{n=0}^\infty 
+        = 
         \left(
-          \sum_{i+j=n}a_ib_j
+          \sum_{n=0}^\infty 
+          \left(
+            \sum_{i+j=n}a_ib_j
+          \right)x^n
+        \right)\cdot \sum_{n=0}^\infty c_nx^n\]\[
+        = \sum_{n=0}^\infty 
+        \left(
+          \sum_{i+j=n}
+          \left(
+            \sum_{h+k=i}a_hb_k
+          \right) c_j
+        \right)x^n \]\[
+        = \sum_{n=0}^\infty 
+        \left(
+          \sum_{i+j=n}a_i
+          \left(
+            \sum_{j+k=j} b_hc_k
+          \right)
         \right)x^n
-      \right)\cdot \sum_{n=0}^\infty c_nx^n\]\[
-      = \sum_{n=0}^\infty 
-      \left(
-        \sum_{i+j=n}
+        =
+        \sum_{n=0}^\infty a_nx^n\cdot 
         \left(
-          \sum_{h+k=i}a_hb_k
-        \right) c_j
-      \right)x^n \]\[
-    = \sum_{n=0}^\infty 
-    \left(
-      \sum_{i+j=n}a_i
-      \left(
-       \sum_{j+k=j} b_hc_k
-      \right)
-    \right)x^n
-    =
-    \sum_{n=0}^\infty a_nx^n\cdot 
-    \left(
-      \sum_{n=0}^\infty b_nx^n\cdot \sum_{n=0}^\infty c_nx^n
-    \right)
-  \]
+          \sum_{n=0}^\infty b_nx^n\cdot \sum_{n=0}^\infty c_nx^n
+        \right)
+      \]
     \item For commutativity of multiplication we have
       \[ \sum_{n=0}^\infty a_nx^n\cdot\sum_{n=0}^\infty b_nx^n=\sum_{n=0}^\infty 
         \left(
           \sum_{i+j=n}a_ib_j
         \right)x^n
-      =\sum_{n=0}^\infty 
+        =\sum_{n=0}^\infty 
         \left(
           \sum_{i+j=n}b_ia_j
         \right)x^n
-      = \sum_{n=0}^\infty b_nx^n\cdot \sum_{n=0}^\infty a_nx^n\]
+        = \sum_{n=0}^\infty b_nx^n\cdot \sum_{n=0}^\infty a_nx^n\]
     \item For distributivity we have
       \[ \sum_{n=0}^\infty c_nx^n
         \left(
@@ -136,40 +136,41 @@
         =
         \sum_{n=0}^\infty c_nx^n\cdot \sum_{n=0}^\infty (a_n+b_n)x^n \]\[
         =
-      \sum_{n=0}^\infty 
-      \left(
-        \sum_{i+j=n}c_i(a_j+b_j)
-      \right)x^n
-      =
-      \sum_{n=0}^\infty 
-    \left(
-      \sum_{i+j=n}c_ia_j+c_ib_j
-    \right)x^n \]\[
-    =
-    \sum_{n=0}^\infty 
-    \left(
-      \sum_{i+j=n}c_ia_j+\sum_{i+j=n}c_ib_j
-    \right)x^n
-    =
-    \sum_{n=0}^\infty
-    \left(
-      \sum_{i+j=n}c_ia_j
-    \right)x^n
-    +
-    \sum_{n=0}^\infty
-    \left(
-      \sum_{i+j=n}c_ib_j
-    \right)x^n \]\[
-    =
-    \sum_{n=0}^\infty c^nx^n\cdot\sum_{n=0}^\infty a_nx^n+\sum_{n=0}^\infty c_nx^n\cdot\sum_{n=0}^\infty b_nx^n
-  \]
+        \sum_{n=0}^\infty 
+        \left(
+          \sum_{i+j=n}c_i(a_j+b_j)
+        \right)x^n
+        =
+        \sum_{n=0}^\infty 
+        \left(
+          \sum_{i+j=n}c_ia_j+c_ib_j
+        \right)x^n \]\[
+        =
+        \sum_{n=0}^\infty 
+        \left(
+          \sum_{i+j=n}c_ia_j+\sum_{i+j=n}c_ib_j
+        \right)x^n
+        =
+        \sum_{n=0}^\infty
+        \left(
+          \sum_{i+j=n}c_ia_j
+        \right)x^n
+        +
+        \sum_{n=0}^\infty
+        \left(
+          \sum_{i+j=n}c_ib_j
+        \right)x^n \]\[
+        =
+        \sum_{n=0}^\infty c^nx^n\cdot\sum_{n=0}^\infty a_nx^n+\sum_{n=0}^\infty c_nx^n\cdot\sum_{n=0}^\infty b_nx^n
+      \]
     \end{itemize}
 
     To show that $F[[x]]$ is an integral domain we must show that
     $F[[x]]$ has no zero-divisors. Suppose that $\sum_{n=0}^\infty a^nx^n\cdot\sum_{n=0}^\infty b_nx^n=0$.
     Without loss of generality assume that both $a_0$ and $b_0$ are not $0$.
-    If the first $k$ terms consisted of only zeros we could factor out $x^k$ and
-    proceed with this assumption. Then the zero term would
+    If the first $k$ terms consisted of only zeros we could factor out $x^{k}$ from
+    each term. It would then reduce to multiplying two series with this assumption.
+    Then the zero term would
     be $\sum_{i+j=0}a_ib_j=a_0b_0=0$. Since $F$ is a field either $a_0$ or $b_0$ are $0$.
     Without loss of generality assume that it's $b_0$. We then proceed by induction.
     Assume that $b_k=0$ for $k\leq m$. Then consider the term $b_{m+1}$. The sum
@@ -231,12 +232,45 @@
     \begin{enumerate}
     \item Let $\sum_{g\in G}a_gg\in R[G]$. Then
       \[ \sum_{g\in G}a_gg\cdot\sum_{g\in G}g=\sum_{k\in G}\left(\sum_{gh=k}a_g\right)k \]
-        Since rings are associative under addition we have
+      Since rings are associative under addition we have
       \[ \sum_{k\in G}\left(\sum_{gh=k}a_g\right)k= \sum_{k\in G}\left(\sum_{gh=k}a_h\right)k
         = \sum_{g\in G}g\cdot\sum_{g\in G}a_gg\sum\]
       Therefore $\Lambda$ is in the center of $R[G]$.
-    \item
-    \item
+    \item Let $\sum_{g\in G}a_gg\in R[G]$. Then
+      \[ \sum_{g\in G}a_gg\cdot\sum_{g\in K}g=\sum_{g\in G}
+        \left(
+          \sum_{hk=g}a_hb_k
+        \right)g\]
+      where $b_k=0$ if $k\notin K$ and $1$ if $b_k\in K$. Since
+      $K$ is a conjugacy class we have that
+      $gkg^{-1}=k'\in K$. It then follows that $gk=k'g$ for some $k'$.
+      Thus we can rewrite the above equation as
+      \[ \sum_{g\in G}
+        \left(
+          \sum_{hk=g}a_hb_k
+        \right)g
+        =
+        \sum_{g\in G}
+        \left(
+          \sum_{hk=g}b_{k'}a_h
+        \right)g
+        =
+        \sum_{g\in K}g \cdot\sum_{g\in G}a_gg \]
+      Which completes the proof.
+    \item Let $x=\sum_1^ra_ik_i$. Since $Z(R[G])$ is a subring of $R[G]$ it then
+      follows that $x\in Z(R[G])$.
+
+      Next suppose that $x\in Z$ and let $a=\sum_{g\in G}a_gg\in R[G]$. Since
+      $xa=ax$ it follows that $\sum_{hk=g}x_ha_k=\sum_{hk=g}a_hx_k$ for all $g\in G$.
+      Now suppose that $x$ was not a linear combination of $k_i$s. Then
+      there would be a $K_i$ for which there would be $k,k'\in K_i$ such that
+      $x_k\neq x_{k'}$. Since $k,k'$ are in the same conjugacy class it follows
+      that there exists a $g\in G$ such that $gk=k'g$. However this means that
+      \[ \sum_{hf=g}a_hx_f\neq \sum_{hf=g} x_hx_f \]
+      since when we switch sides we will swap out $x_k$ for $x_{k'}$ making the
+      sums inequal which is a contradiction.
+
+      Therefore $x\in Z(R[G])$ is and only if $x=\sum_1^ra_ik_i$.
     \end{enumerate}
   \end{enumerate}
 \end{proof}
@@ -250,7 +284,33 @@
 \end{problem}
 
 \begin{proof}
-  
+  \begin{itemize}
+  \item Let $na+mb\in (a,b)$. There exist $\alpha,\beta\in\bb{Z}$ such that
+    $\alpha \gcd(a,b)=a$ and $\beta\gcd(a,b)=b$.
+    Then $na+mb=n\alpha\gcd(a,b)+m\beta\gcd(a,b)\in(\gcd(a,b))$ which implies that
+    $(a,b)\subset(\gcd(a,b))$.
+
+    Now let $n\gcd(a,b)\in(\gcd(a,b))$. Then there exist $\alpha,\beta\in\bb{Z}$ such
+    that $\alpha a+\beta b = \gcd(a,b)$. Thus $n\gcd(a,b)=n\alpha a+n\beta b\in (a,b)$ implying
+    that $(\gcd(a,b))\subset(a,b)$.
+
+    Therefore $(a,b)=(\gcd(a,b))$.
+  \item Let $d=\text{lcm}(a,b)$. Then there exists $\alpha,\beta\in\bb{Z}$ such that
+    $\alpha a= \beta b= d$. Then if $nd\in(d)$ we have $nd=n\alpha a = n\beta b$ which implies
+    that $nd\in(a)\cap(b)$.
+
+    Let $f\in(a)\cap(b)$. Then there exist $\alpha,\beta\in\bb{Z}$ such that $\alpha a = \beta b = f$.
+    However this implies that both $a$ and $b$ divide $f$ and as such
+    $d$ divides $f$ and there exists a $\delta\in\bb{Z}$ such that $\delta d=f$.
+    It then follows that $f\in(d)$.
+
+    Therefore $(a)\cap(b)=(\text{lcm}(a,b))$.
+  \item Let $nab\in (ab)$. Then $na\cdot 1b\in(a)(b)$.
+
+    Otherwise let $na\cdot mb\in(a)(b)$. Then $namb=(nm)(ab)\in(ab)$.
+
+    Therefore $(a)(b)=(ab)$.
+  \end{itemize}
 \end{proof}
 
 \sk
@@ -264,7 +324,67 @@
 \end{problem}
 
 \begin{proof}
+  First we'll show that it preserves addition. Let $\sum_{g\in G}a_gg,\sum_{g\in G}b_gg\in R[G]$.
+  Then
+  \[ \epsilon
+    \left(
+      \sum_{g\in G}a_gg
+    \right)+
+    \epsilon
+    \left(
+      \sum_{g\in G}b_gg
+    \right)
+    = \sum_{g\in G}a_g+\sum_{g\in G}b_g
+    = \sum_{g\in G}a_g+b_g
+    = \epsilon
+    \left(
+      \sum_{g\in G}a_g+\sum_{g\in G}b_g
+    \right)\]
+
+  For multiplication we have
+  \[
+    \epsilon
+    \left(
+      \sum_{g\in G}a_gg
+    \right)\cdot
+    \epsilon
+    \left(
+      \sum_{g\in G}b_gg
+    \right)
+    =\sum_{g\in G}a_g\cdot\sum_{g\in G}b_g\]\[
+    =\sum_{g\in G}
+    \left(
+      \sum_{hk=g}a_hb_k
+    \right)
+    =\epsilon
+    \left(
+      \sum_{g\in G}
+      \left(
+        \sum_{hk=g}a_hb_k
+      \right)g
+    \right)
+    =\epsilon
+    \left(
+      \sum_{g\in G}a_gg\cdot\sum_{g\in G}b_gg
+    \right)
+  \]
+
+  Therefore $\epsilon$ is a ring homomorphism.
   
+  Let $a\in R$. Then $\epsilon(ag)=a$. Therefore the map $\epsilon$ is surjective.
+
+  Now suppose that $\sum_{g\in G}a_gg\in \ker \epsilon$. Then $\sum_{g\in G}a_g=0$. It then
+  follows that $\sum_{g\in G\setminus\{e\}}a_g+a_e=0$. Which implies that
+  $a_e=-\sum_{g\in G\setminus\{e\}}a_g$. This implies that we can rewrite our original
+  term as $\sum_{g\in G}a_g(g-e)$ which shows that $\ker \epsilon\subset\langle\{g-e|g\in G\}\rangle$.
+
+  Now suppose that we have $\sum_{g\in G}a_g(g-e)=\sum_{g\in G}a_gg-\sum_{g\in G}a_g$. Then
+  \[\epsilon
+    \left(
+      \sum_{g\in G}a_gg-\sum_{g\in G}a_g
+    \right)
+    = \sum_{g\in G}a_g-\sum_{g\in G}a_g=0\]
+  Therefore the kernel of $\epsilon$ is the set generated by $\{g-e|g\in G\}$.
 \end{proof}
 
 \sk
@@ -287,7 +407,23 @@
     \item $3^2\equiv 1 \mod 4$
     \end{itemize}
     Therefore the polynomial $x^2=0$ or $1$ for all $x\in\bb{Z}_4$.
-  \item
+  \item First we will verify that $x^2+y^2=3z^2$ has no non-trivial solutions in
+    $\bb{Z}_3$. There scenarios are:
+    \begin{itemize}
+    \item If $x=y=1$ then $1+1=2$.
+    \item If $x=0$, $y=1$ then $0+1=1$.
+    \item If $x=1$, $y=0$ then $1+0=1$.
+    \end{itemize}
+    Therefore there are no non-trivial solutions of $x^2+y^2=3z^2$.
+
+    Thus if an integer solution does exist it must be that $x=3k$ and $y=3j$.
+    Then the equation shifts to $9k^2+9j^2=3z^2$ which then gives us
+    $3(k^2+j^2)=z^2$. This implies that $z=3h$. Rewrite again once
+    more and we get $k^2+j^2=3h^2$. However this is the original equation
+    which implies that we can factor out an arbitrary number of $3$s from
+    $x,y,z$. Therefore the only solution where $x,y|3$ is the trivial solution.
+
+    Therefore $x^2+y^2=3z^2$ has no non-trivial integer solutions.
   \end{enumerate}
 \end{proof}
 
@@ -301,8 +437,22 @@
 \end{problem}
 
 \begin{proof}
-  
+  First we show that $\bb{Q}[x]/I\cong\bb{Q}(\sqrt{D})$. Define
+  $\varphi:\bb{Q}[x]\rightarrow \bb{Q}[\sqrt{D}]$ as $\varphi(f(x))=f(\sqrt{D})$. If
+  $f(x)=\sum_0^nr_ix^i$ then $\varphi(f(x))=\sum_0^nr_i\sqrt{D}^{i}\in\bb{Q}[\sqrt{D}]$.
+  To show that it is a homomorphism first consider addition for $f,g\in\bb{Q}[x]$.
+  Then
+
+  For multiplication we have
+
+  To show that it is surjective
+
+  The kernel of $\varphi$ is 
+
+  Therefore by the first isomorphism we have
+
+  The ideals 
 \end{proof}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \end{document}
