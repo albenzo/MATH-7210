@@ -238,16 +238,14 @@
       \[ \sum_{k\in G}\left(\sum_{gh=k}a_g\right)k= \sum_{k\in G}\left(\sum_{gh=k}a_h\right)k
         = \sum_{g\in G}g\cdot\sum_{g\in G}a_gg\sum\]
       Therefore $\Lambda$ is in the center of $R[G]$.
-    \item Let $\sum_{g\in G}a_gg\in R[G]$. Then
-      \[ \sum_{g\in G}a_gg\cdot\sum_{g\in K}g=\sum_{g\in G}
-        \left(
-          \sum_{hk=g}a_hb_k
-        \right)g\]
-      where $b_k=0$ if $k\notin K$ and $1$ if $b_k\in K$. Since
-      $K$ is a conjugacy class we have that
-      $gkg^{-1}=k'\in K$. It then follows that $gk=k'g$ for some $k'$.
-      Thus we can rewrite the above equation as
-      \[ \sum_{g\in G}
+    \item Let $\sum_{g\in G}a_gg\in R[G]$. In order for $\sum_{g\in K}g\in Z(R[G])$ it must be
+      the case that $\sum_{hk=g}a_hb_k=\sum_{hk=g}b_ha_k$ where $b_h=1$ if $h\in K$ and
+      $b_h=0$ otherwise. Let $k\in K$. Then $hkh^{-1}=k'\in K$ which implies that
+      $hk=k'h$. Since the $b_k=b_{k'}$ we know that $a_hb_k=b_{k'}a_h$ and we
+      can map each term of $\sum_{hk=g}a_hb_k$ to an equal term $b_{k'}a_h$
+      making the sums equal.
+      Therefore
+            \[ \sum_{g\in G}
         \left(
           \sum_{hk=g}a_hb_k
         \right)g
@@ -258,7 +256,7 @@
         \right)g
         =
         \sum_{g\in K}g \cdot\sum_{g\in G}a_gg \]
-      Which completes the proof.
+      which shows that $\sum_{g\in G}g\in Z(R[G])$.
     \item Let $x=\sum_1^ra_ik_i$. Since $Z(R[G])$ is a subring of $R[G]$ it then
       follows that $x\in Z(R[G])$.
 
