@@ -1,0 +1,184 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amscd}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{listings}
+\usepackage{enumerate}
+
+\textwidth=15cm \textheight=22cm \topmargin=0.5cm \oddsidemargin=0.5cm \evensidemargin=0.5cm
+
+\newcommand{\sk}{\vskip 10mm}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\ra}{\rightarrow}
+
+\theoremstyle{plain}
+\newtheorem{problem}{Problem}
+\newtheorem{lemma}{Lemma}[problem]
+
+\theoremstyle{remark}
+\newtheorem{tpart}{}[problem]
+\newtheorem*{ppart}{}
+
+\begin{document}
+
+\begin{problem}[7.14]
+  \begin{enumerate}
+  \item Let $R$ be a commutative ring with $1\neq 0$ and $I_1,\ldots,I_n$
+    pairwise comaximal ideals of $R$. Prove that
+    \[ (R/(I_1\ldots I_n))^X\cong (R/I_1)^X\times\ldots\times(R/I_n)^X \]
+    as groups.
+  \item Let $m,n$ be relatively prime positive integers. Prove that
+    \[ (\bb{Z}_{mn})^X\cong (\bb{Z}_m)^X\times(\bb{Z}_n)^X \]
+    as groups.
+  \item Solve the system of congruences:
+    \begin{align*}
+      x &\equiv 2 \mod 9\\
+      x &\equiv 3 \mod 5\\
+      x &\equiv 1 \mod 7\\
+      x &\equiv 5 \mod 11\\
+    \end{align*}
+  \end{enumerate}
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}[8.1]
+  Prove that the division algorithm holds for any polynomial ring over a field.
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}[8.2]
+  \begin{enumerate}
+  \item Prove that $a|b$ iff $b\in(a)$ iff $(b)\subseteq(a)$.
+  \item If $a|b$ and $a|c$, prove that $a|(bx+cy)$ for all $x,y\in R$.
+  \item Suppose $b\neq 0$. If $a|b$ and $b|c$, then $a|c$.
+  \item If $d$ is a greatest common divisor of $a,b$ then $du$
+    is also a greatest common divisor of $a,b$ for any unit $u$
+    of $R$.
+  \end{enumerate}
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}[8.3]
+  An element $p$ in an integral domain $R$ is prime if, and only if,
+  $p|ab$ implies $p|a$ or $p|b$ for any $a,b\in R$.
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}[8.4]
+  Let $R$ be a UFD and $a,b\in R\setminus\{0\}$. Then $a,b$ has a greatest
+  common divisor in $R$. If $a,b$ are rleatively priem and $a|bc$ for some
+  $c\in R$, then $a|c$.
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}[G1]
+  Let $H$ be a normal subgroup of a group $G$, and let $K$ be a subgroup of $H$.
+  \begin{enumerate}
+  \item Give an example of this situation where $K$ is not a normal
+    subgroup of $G$.
+  \item Prove that if the normal subgroup $H$ is cyclic, then $K$ is normal
+    in $G$.
+  \end{enumerate}
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}[G2]
+  Prove that every finite group of order at least three has a nontrivial
+  automorphism.
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}[R1]
+  Let $R=\bb{Z}[\sqrt{-3}]=\{a+b\sqrt{-3}|a,b\in\bb{Z}\}$.
+  \begin{enumerate}
+  \item Why is $R$ an integral domain?
+  \item What are the units in $R$?
+  \item Is the element 2 irreducible in $R$?
+  \item If $x,y\in R$, and $2|xy$, does it follow that $2$ divides
+    either $x$ or $y$? Justify your answer.
+  \end{enumerate}
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}[R2]
+  \begin{enumerate}
+  \item Give an example of an integral domain with exactly 9 elments.
+  \item Is there an integral domain with exactly 10 elements? Justify
+    your answer.
+  \end{enumerate}
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}[R3]
+  Let
+  \[
+    F =
+    \left\{\left(
+        \begin{array}{cc}
+          a&b\\
+          2b&a
+        \end{array}
+      \right)| a,b\in \bb{Q}\right\}
+  \]
+  \begin{enumerate}
+  \item Prove that $F$ is a field under the usual matrix operations of addition
+    and multiplication.
+  \item Prove that $F$ is isomorphic to the field $\bb{Q}(\sqrt{2})$.
+  \end{enumerate}
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
