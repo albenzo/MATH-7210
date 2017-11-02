@@ -46,8 +46,24 @@
 
 \begin{proof}
   \begin{enumerate}
-  \item
-  \item
+  \item By the Chinese Remainder Theorem we know that
+    \[(R/(I_1\ldots I_n))\cong (R/I_1)\times\ldots\times(R/I_n) \]
+    as rings. As such there is an isomorphism
+    $\varphi:R\rightarrow S$ and since ring isomorphisms send units to units we have
+    a bijection $\varphi|_{R^X}:R^X\rightarrow S^X$. However since $\varphi$ is an isomorphism
+    it will send identity to identity and preserve multiplication.
+
+    Thus $\varphi|_{R^X}$ is a group homomorphism and
+    \[ (R/(I_1\ldots I_n))^X\cong (R/I_1)^X\times\ldots\times(R/I_n)^X \]
+    are isomorphic as groups.
+    
+  \item From a prior homework we have that $(n)(m)=(nm)$. Therefore
+    $\bb{Z}_{mn}\cong \bb{Z}/m\bb{Z}n\bb{Z}$ in addition to
+    $\bb{Z}_n\cong\bb{Z}/n\bb{Z}$ and $\bb{Z}_m\cong \bb{Z}/m\bb{Z}$.
+    Finally note that since $\gcd(n,m)=1$ there exist $\alpha,\beta\in\bb{Z}$
+    such that $\alpha a+\beta b = 1$ and therefore $(n)+(m)=\bb{Z}$. Thus
+    we can apply part 1 of this problem to get that
+    \[ \bb{Z}_{mn}^X\cong\bb{Z}_m^X\times\bb{Z}_n^X \]
   \item $x\cong 533 \mod 3465$
   \end{enumerate}
 \end{proof}
@@ -59,7 +75,22 @@
 \end{problem}
 
 \begin{proof}
-  
+  Let $f,g\in k[x]$ where $k$ is a field. We will prove the division algorithm
+  holds via induction over the degree of $f$.
+
+  Let $\text{deg}(f)=0$. Then $f=0\cdot g+f$ and since $\deg(f)=0<\deg(g)$ this is
+  a valid choice for the division algorithm.
+
+  Assume that the division algorithm holds for polynomials $f\in k[x]$ when
+  $\deg(f)= n$. Then given $g\in k[x]$ we have $f=qg+r$ where $\deg(g)>\deg(r)$.
+  However we can form any given a polynomial $f'=\sum_0^{n+1}a_ix^i$ let
+  $f:= \sum_0^na_{i+1}x^i+a_0$. Then $f'=x\cdot f+a_0$. Apply the division algorithm to
+  $f$ and we get
+  \[ f'=x(qg+r)=(q\cdot x)g + x\cdot r\]
+  which shows that the division algorithm holds for $\deg=k+1$ if we assume
+  it for $\deg =k$.
+
+  Therefore the division algorithm holds for any polynomial ring over a field.
 \end{proof}
 
 \sk
@@ -76,7 +107,37 @@
 \end{problem}
 
 \begin{proof}
-  
+  \begin{enumerate}
+  \item Suppose that $a|b$. Then there exists a $c$ such that $ac=b$ which implies
+    that $b\in (a)$.
+
+    Next suppose that $b\in(a)$ and let $d\in (b)$. Then $d=fb$. However $b=ca$ since
+    $b\in (a)$ and as such $d=fca\in (a)$.
+
+    Finally suppose that $(b)\subseteq (a)$. Then $b\in(a)$ which implies that $b=ca$ for
+    some $c$. This is the definition of $a|b$.
+
+    Therefore $a|b$ iff $b\in(a)$ iff $(b)\subseteq(a)$.
+    
+  \item Suppose that $a|b$ and that $a|c$. Then there exist $\beta,\gamma\in R$ such that
+    $a\beta = b$ and $a\gamma = c$. If we have $(bx+cy)$ we can substitute $b,c$ to get
+    \[ bx+cy = a\beta x + a\gamma c = a(\beta x + \gamma y)\]
+    which implies that $a|(bx+cy)$.
+
+    Therefore if $a|b$ and $a|c$ then $a|(bx+cy)$ for all $x,y\in R$.
+
+  \item Suppose that $a|b$ and $b|c$. Then there exist $\alpha,\beta\in R$ such that
+    $\alpha a = b$ and $\beta b = c$. Thus $\beta\alpha a =c$ and therefore $a|c$.
+
+  \item Let $d$ be a greatest common divisor of $a,b$. Then
+    $d|a$, $d|b$ and if $d'|a,b$ then $d|d'$. Consider $ud$ where $u$ is a unit.
+    Then $du$ divides $a,b$ as $\alpha d=a$ and $\beta d=b$ which implies that
+    $\alpha u^{-1}(ud) =a $ and $\beta u^{-1}(ud) = b$. Thus $ud|a$ and $ud|b$.
+    Now suppose that $f|a$ and $f|b$. Then $d|f$ which implies that
+    $\gamma d = f$. It then follows that $\gamma u^{-1}(ud)=f$ and thus $ud|f$.
+
+    Therefore $ud$ is a greatest common divisor of $a$ and $b$.
+  \end{enumerate}
 \end{proof}
 
 \sk
@@ -87,7 +148,16 @@
 \end{problem}
 
 \begin{proof}
-  
+  Let $p\in R$ be prime. Suppose that $p|ab$. Then $\alpha p=ab$ which implies
+  that $ab\in (p)$. However since $p$ is prime, $(p)$ is a prime ideal.
+  This means that either $a\in (p)$, in which case $p|a$, or $b\in (p)$ with $p|b$.
+
+  Otherwise suppose that when $p|ab$ then $p|a$ or $p|b$. Let $ab\in (p)$. Then
+  $p|ab$ which implies that $p|a$, in which case $a\in (p)$, or $p|b$ and $b\in (p)$
+  which shows that $(p)$ is prime.
+
+  Therefore an element $p$ in an integral domain $R$ is prime if, and only if,
+  $p|ab$ implies that $p|a$ or $p|b$ for any $a,b\in R$.
 \end{proof}
 
 \sk
@@ -118,6 +188,7 @@
   \begin{enumerate}
   \item Consider $S_5$ and $A_5$. We know that $A_5\trianglelefteq S_5$ however
     the subgroup $\langle(1\ 2\ 3)\rangle$ is not normal in $S_5$.
+  \item 
   \end{enumerate}
 \end{proof}
 
