@@ -133,8 +133,8 @@
     $d|a$, $d|b$ and if $d'|a,b$ then $d|d'$. Consider $ud$ where $u$ is a unit.
     Then $du$ divides $a,b$ as $\alpha d=a$ and $\beta d=b$ which implies that
     $\alpha u^{-1}(ud) =a $ and $\beta u^{-1}(ud) = b$. Thus $ud|a$ and $ud|b$.
-    Now suppose that $f|a$ and $f|b$. Then $d|f$ which implies that
-    $\gamma d = f$. It then follows that $\gamma u^{-1}(ud)=f$ and thus $ud|f$.
+    Now suppose that $f|a$ and $f|b$. Then $f|d$ which implies that
+    $\gamma f = d$. It then follows that $u\gamma f=ud$ and thus $f|ud$.
 
     Therefore $ud$ is a greatest common divisor of $a$ and $b$.
   \end{enumerate}
@@ -169,7 +169,17 @@
 \end{problem}
 
 \begin{proof}
-  
+  Let $a,b\in R\setminus\{0\}$. Since $R$ is a UFD we have unique factorizations
+  $a=p_1\cdots p_s$ and $b=q_1\cdots q_t$ which are unique up to associates and permutations.
+  Define $f:R\rightarrow \bb{N}$ by $f(r)$ as the minimum number of occurrences of
+  $r$ in the factorization of $a$ or $b$ up to associates. Then
+  define $d:=\prod_{r\in\{p_i,q_i\}/\text{associates}}r^{f(r)}$. We know that $d|a$ and $d|b$
+  since $d$ contains only factors of $a$ and $b$. Moreover if $d'|a$ and $d'|b$
+  then $d'|d$ as $d$ was defined to contain as many factors as possible while
+  still dividing $a,b$. Thus $d$ is a $\gcd$ of $a,b$.
+
+  Therefore if $a,b\in R\setminus\{0\}$ and $R$ is a UFD, then $a,b$ have a greatest common
+  divisor.
 \end{proof}
 
 \sk
@@ -188,7 +198,11 @@
   \begin{enumerate}
   \item Consider $S_5$ and $A_5$. We know that $A_5\trianglelefteq S_5$ however
     the subgroup $\langle(1\ 2\ 3)\rangle$ is not normal in $S_5$.
-  \item 
+  \item Since $H=\langle h\rangle$ is cyclic we know that $K=\langle h^a\rangle$ as well. Thus
+    if we consider $ghg^{-1}=h^k\in H$. Then if we raise both sides to the
+    power $ap$ we get $(ghg^{-1})^{ap}=gh^{ap}g^{-1}=h^{(kp)a}\in K$.
+
+    Therefore $K\trianglelefteq G$.
   \end{enumerate}
 \end{proof}
 
@@ -200,7 +214,13 @@
 \end{problem}
 
 \begin{proof}
-  
+  Suppose that $G$ is abelian. Then the map $a\mapsto a^{-1}$ is an automorphism.
+
+  Otherwise if $G$ is not abelian then exists $gh\neq hg$. Then the map
+  $f\mapsto gfg^{-1}$ will be an automorphism that is not trivial.
+
+  Therefore every finite group of order at least three has a non-trivial
+  automorphism.
 \end{proof}
 
 \sk
@@ -217,7 +237,20 @@
 \end{problem}
 
 \begin{proof}
-  
+  \begin{enumerate}
+  \item Note that $\sqrt{-3}=i\sqrt{3}$. As such $R$ is a subring of $\bb{C}$
+    which is a field. As such $R$ cannot contain any zero divisors.
+  \item The units of $R$ will be the elements $a+b\sqrt{-3}$ such that
+    $a^2+3b^2=\pm 1$. The negative case cannot happen and any nonzero value for $b$ will
+    make it too large. Therefore the only units of $R$ are $\pm 1$.
+  \item Since the norm is multiplicative if $rs=2$ then
+    $4=N(r)N(s)=(ac)^2+3b^2c^2+3a^2d^2+9b^2d^2$. There are three was this can be fulfilled
+    up to swapping $r$ and $s$. Either $r=2$ and $s=\pm 1$ or $r=(1+\sqrt{3}),s=1$.
+    However the latter doesn't fulfill $rs=2$ so we can discard it. Therefore
+    $2$ is irreducible in $R$
+  \item The number $2$ is not prime in $R$ as $2|(4=(1+\sqrt{-3})(1-\sqrt{-3}))$
+    however $2\nmid (1\pm \sqrt{-3})$.
+  \end{enumerate}
 \end{proof}
 
 \sk
@@ -233,7 +266,10 @@
 \begin{proof}
   \begin{enumerate}
   \item $\bb{Z}_3[\sqrt{2}]$
-  \item
+  \item When a ring is finite it is an integral domain if and only if it is
+    a field. However fields must have prime power order and since $10$ is not
+    a prime power there cannot exist a field, and thus an integral domain, of
+    order $10$.
   \end{enumerate}
 \end{proof}
 
@@ -258,10 +294,98 @@
 \end{problem}
 
 \begin{proof}
-  
+  \begin{enumerate}
+  \item First we will show that $F$ is closed under matrix addition
+    and multiplication. Let \[
+      \left(
+        \begin{array}{cc}
+          a&b\\
+          2b&a\\
+        \end{array}
+      \right),
+      \left(
+        \begin{array}{cc}
+          c&d\\
+          2d&c\\
+        \end{array}
+      \right)\in F\]
+    Then
+    \[
+      \left(
+        \begin{array}{cc}
+          a&b\\
+          2b&a\\
+        \end{array}
+      \right)+
+      \left(
+        \begin{array}{cc}
+          c&d\\
+          2d&c\\
+        \end{array}
+      \right)
+      = 
+      \left(
+        \begin{array}{cc}
+          a+c&b+d\\
+          2(b+d)&a+c
+        \end{array}
+      \right)
+    \]
+    and
+    \[
+      \left(
+        \begin{array}{cc}
+          a&b\\
+          2b&a\\
+        \end{array}
+      \right)
+      \left(
+        \begin{array}{cc}
+          c&d\\
+          2d&c\\
+        \end{array}
+      \right)
+      = 
+      \left(
+        \begin{array}{cc}
+          ac+2bd&bc+ad\\
+          2(bc+ad)&ac+2bd\\
+        \end{array}
+      \right)
+    \]
+    Therefore $F$ is a subring of $M_2(\bb{Q})$ and the only thing left to
+    check is that all nonzero elements are units.
+
+    Suppose that we have an element $x\in F$ such that $a,b$ are not both zero.
+    Then $\det(x)\neq 0$ as that would require $a^2-2b^2=0$ which cannot happen
+    in the rationals. Therefore $x$ does indeed have an inverse.
+  \item Define $\varphi:F\rightarrow\bb{Q}(\sqrt{2})$ as
+    \[ \varphi
+      \left(
+        \begin{array}{cc}
+          a&b\\
+          2b&a\\
+
+        \end{array}
+      \right)=a+b\sqrt{2}\]
+    Then we can define an inverse $\psi:\bb{Q}(\sqrt{2})\rightarrow F$ as
+    \[ \psi(a+b\sqrt{2})=
+      \left(
+        \begin{array}{cc}
+          a&b\\
+          2b&a\\
+        \end{array}
+      \right)\]
+    Clearly $\varphi$ and $\psi$ are inverses and as such $\varphi$ is a bijection.
+
+    To show that $\varphi$ is a ring homomorphism note that in part 1 of the
+    problem the top two lines coincide with the values of the rational
+    part and the $\sqrt{2}$ part of addition and multiplication respectively.
+    Therefore $\varphi$ is a ring isomorphism and as such $F\cong \bb{Q}(\sqrt{2})$.
+  \end{enumerate}
 \end{proof}
 
 \sk
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \end{document}
