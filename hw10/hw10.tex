@@ -64,7 +64,18 @@
     such that $\alpha a+\beta b = 1$ and therefore $(n)+(m)=\bb{Z}$. Thus
     we can apply part 1 of this problem to get that
     \[ \bb{Z}_{mn}^X\cong\bb{Z}_m^X\times\bb{Z}_n^X \]
-  \item $x\cong 533 \mod 3465$
+  \item Setup the system of equations
+    \begin{align*}
+      2 &= x+9a\\
+      3 &= x+5b\\
+      1 &= x+7c\\
+      5 &= x+11d\\
+    \end{align*}
+
+    We can solve this system of equations using the usual methods from
+    linear algebra to get a solution for $x$
+    in terms of another variable $533 = x + 3465y$. This implies that
+    $x\cong 533 \mod 3465$.
   \end{enumerate}
 \end{proof}
 
@@ -111,8 +122,8 @@
   \item Suppose that $a|b$. Then there exists a $c$ such that $ac=b$ which implies
     that $b\in (a)$.
 
-    Next suppose that $b\in(a)$ and let $d\in (b)$. Then $d=fb$. However $b=ca$ since
-    $b\in (a)$ and as such $d=fca\in (a)$.
+    Next suppose that $b\in(a)$ and let $d\in (b)$. Then $d=fb$. However $b=ca$, since
+    $b\in (a)$, which implies that $d=fca\in (a)$.
 
     Finally suppose that $(b)\subseteq (a)$. Then $b\in(a)$ which implies that $b=ca$ for
     some $c$. This is the definition of $a|b$.
@@ -130,7 +141,7 @@
     $\alpha a = b$ and $\beta b = c$. Thus $\beta\alpha a =c$ and therefore $a|c$.
 
   \item Let $d$ be a greatest common divisor of $a,b$. Then
-    $d|a$, $d|b$ and if $d'|a,b$ then $d|d'$. Consider $ud$ where $u$ is a unit.
+    $d|a$, $d|b$ and if $d'|a,b$ then $d'|d$. Consider $ud$ where $u$ is a unit.
     Then $du$ divides $a,b$ as $\alpha d=a$ and $\beta d=b$ which implies that
     $\alpha u^{-1}(ud) =a $ and $\beta u^{-1}(ud) = b$. Thus $ud|a$ and $ud|b$.
     Now suppose that $f|a$ and $f|b$. Then $f|d$ which implies that
@@ -175,7 +186,7 @@
   $r$ in the factorization of $a$ or $b$ up to associates. Then
   define $d:=\prod_{r\in\{p_i,q_i\}/\text{associates}}r^{f(r)}$. We know that $d|a$ and $d|b$
   since $d$ contains only factors of $a$ and $b$. Moreover if $d'|a$ and $d'|b$
-  then $d'|d$ as $d$ was defined to contain as many factors as possible while
+  then $d'|d$ as $d$ was defined to contain the maximal amount of each factor  while
   still dividing $a,b$. Thus $d$ is a $\gcd$ of $a,b$.
 
   Therefore if $a,b\in R\setminus\{0\}$ and $R$ is a UFD, then $a,b$ have a greatest common
@@ -200,7 +211,8 @@
     the subgroup $\langle(1\ 2\ 3)\rangle$ is not normal in $S_5$.
   \item Since $H=\langle h\rangle$ is cyclic we know that $K=\langle h^a\rangle$ as well. Thus
     if we consider $ghg^{-1}=h^k\in H$. Then if we raise both sides to the
-    power $ap$ we get $(ghg^{-1})^{ap}=gh^{ap}g^{-1}=h^{(kp)a}\in K$.
+    power $ap$ we get $(ghg^{-1})^{ap}=gh^{ap}g^{-1}=h^{(kp)a}\in K$. Since
+    $K$ is cyclic this will hold for any element of $K$ by varying $p$.
 
     Therefore $K\trianglelefteq G$.
   \end{enumerate}
@@ -214,7 +226,10 @@
 \end{problem}
 
 \begin{proof}
-  Suppose that $G$ is abelian. Then the map $a\mapsto a^{-1}$ is an automorphism.
+  Suppose that $G$ is abelian with at least one element that is not of order two.
+  Then the map $a\mapsto a^{-1}$ is a nontrivial automorphism. If all elements
+  of $G$ are of order two then $G=\bigoplus\bb{Z}_2$ and permuting and two of the
+  generators would be a nontrivial automorphism.
 
   Otherwise if $G$ is not abelian then exists $gh\neq hg$. Then the map
   $f\mapsto gfg^{-1}$ will be an automorphism that is not trivial.
@@ -265,8 +280,28 @@
 
 \begin{proof}
   \begin{enumerate}
-  \item $\bb{Z}_3[\sqrt{2}]$
-  \item When a ring is finite it is an integral domain if and only if it is
+  \item The integral domain $\bb{Z}_3[\sqrt{2}]$ contains $3^2=9$ elements.
+    The fact that $\bb{Z}_3[\sqrt{2}]$ is an integral domain follows directly
+    from the fact that $\bb{Z}_3$ is a field.
+  \item First we'll show that a field has prime power order. Let $\bb{F}_p$ be
+    a field. Then the characteristic of $\bb{F}_k$ must be prime. If it were
+    not then the characteristic would equal $mn$ for some $m,n\in\bb{Z}_{>0}$.
+    This would imply that $(\sum_1^n1)(\sum_1^m1)=\sum_0^{mn}1=0$. It then follows that
+    there are non-trivial zero divisors in $\bb{F}_k$ which is a contradiction.
+
+    Let $p$ be the characteristic of $\bb{F}_k$ and suppose that $q|k$. Then
+    there exists an element $x\in\bb{F}_k$ such that the order of $x$ is $q$.
+    Since $p,q$ are both primes there exist $\alpha,\beta\in\bb{Z}$  such that
+    $\alpha p+\beta q =1$. This implies that
+    \[ \alpha p + \beta q x = x\]
+    However $\alpha (px)=0$ since $p$ is the characteristic. Thus $\beta q x =0$. Then
+    the only way the prior equation can hold is if $x=0$ which is a contradiction
+    as $0$ does not have a nonzero order.
+
+    Since there is only one prime that can divide the order of $\bb{F}_k$
+    it must be that $k=p^n$ for some $n$.
+
+    When a ring is finite it is an integral domain if and only if it is
     a field. However fields must have prime power order and since $10$ is not
     a prime power there cannot exist a field, and thus an integral domain, of
     order $10$.
@@ -358,7 +393,40 @@
 
     Suppose that we have an element $x\in F$ such that $a,b$ are not both zero.
     Then $\det(x)\neq 0$ as that would require $a^2-2b^2=0$ which cannot happen
-    in the rationals. Therefore $x$ does indeed have an inverse.
+    in the rationals. Therefore $x$ does indeed have an inverse. To show that
+    the inverse is in $F$ we can construct it explicitly as
+    \[
+      \frac{1}{a^2-2b^2}
+      \left(
+        \begin{array}{cc}
+          a & -b\\
+          -2b & a\\
+        \end{array}
+      \right)
+    \]
+    Then
+    \[\left(
+        \begin{array}{cc}
+          a&b\\
+          2b&a\\
+        \end{array}
+      \right)\cdot
+      \frac{1}{a^2-2b^2}
+      \left(
+        \begin{array}{cc}
+          a & -b\\
+          -2b & a\\
+        \end{array}
+      \right)
+      =
+      \left(
+        \begin{array}{cc}
+          1&0\\
+          0&1\\
+        \end{array}
+      \right)\]
+
+    Therefore $F$ is a field.
   \item Define $\varphi:F\rightarrow\bb{Q}(\sqrt{2})$ as
     \[ \varphi
       \left(
