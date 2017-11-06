@@ -1,0 +1,230 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amscd}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{listings}
+\usepackage{enumerate}
+
+\textwidth=15cm \textheight=22cm \topmargin=0.5cm \oddsidemargin=0.5cm \evensidemargin=0.5cm
+
+\newcommand{\sk}{\vskip 10mm}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\ra}{\rightarrow}
+
+\theoremstyle{plain}
+\newtheorem{problem}{Problem}
+\newtheorem{lemma}{Lemma}[problem]
+
+\theoremstyle{remark}
+\newtheorem{tpart}{}[problem]
+\newtheorem*{ppart}{}
+
+\begin{document}
+
+ \begin{problem}[8.5]
+  Let $R=\bb{Z}[\sqrt{-5}]$. Show that $2,3,1+\sqrt{-5},1-\sqrt{-5}$ are
+  irreducibles of $R$ and no two of which are associate in $R$, and that
+  $6=2\cdot 3=(1+\sqrt{-5})(1-\sqrt{-5})$ are two distinct factorizations of
+  $6$ into irreducibles in $R$. So $R$ is not a UFD.
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}[9.1]
+  Prove that every irreducible element of a UFD is a prime.
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+
+\begin{problem}[9.3]
+  Give an example of a UFD which is not a PID.
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+
+\begin{problem}[9.4]
+  \begin{enumerate}
+  \item Determine whether the following polynomials are irreducible in
+    the rings indicated and prove your assertions. For those that are reducible,
+    determine their factorization into irreducibles.
+    \begin{enumerate}
+    \item $x^3+x+1$ in $\bb{Z}_3[x]$.
+    \item $x^4+1$ in $\bb{Z}_5[x]$.
+    \item $x^4+10x^2+1$ in $\bb{Z}[x]$.
+    \item $x^4-4x^3+6$ in $\bb{Z}[x]$.
+    \item $x^6+30x^5-15x^3+6x-120$ in $\bb{Z}[x]$.
+    \item $x^2+y^2+xy+1$ in $\bb{Q}[x,y]$.
+    \end{enumerate}
+  \item Prove that the following polynomials are irreducible in $\bb{Z}[x]$.
+    \begin{enumerate}
+    \item $x^4+4x^3+6x^2+2x+1$ (Substitute $x-1$ for $x$).
+    \item $\frac{(x+2)^p-2^p}{x}$ where $p$ is an odd prime.
+    \item $\prod_1^n(x-i) - 1$, where $n\in\bb{Z}_{>0}$
+    \end{enumerate}
+  \item Find all irreducible polynomials of degree $\leq 3$ in $\bb{Z}_2[x]$,
+    and the same for $\bb{Z}_3[x]$.
+  \item Prove that if $n$ is composite number, then $\sum_0^{n-1}x^{n-1}$ is
+    reducible over $\bb{Z}$.
+  \end{enumerate}
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+
+\begin{problem}[9.5]
+  Let $R$ be a PID and $a,b\in R$. Prove that if $a,b$ are relatively
+  prime, then $(a)+(b)=R$, and $a^i,b^j$ are relatively prime for all
+  $i,j\in\bb{Z}_{>0}$.
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+
+\begin{problem}[9.6]
+  \begin{enumerate}
+  \item Let $F$ be a finite field of order $q$ and $f(x)$ a polynomial of degree
+    $n$. Prove that the quotient ring $F[x]/(f(x))$ has $q^n$ elements.
+  \item Show that $f(x)=x^3+x+1$ is irreducible in $\bb{Z}_2[x]$ and that
+    $K=\bb{Z}_2/(f(x))$ is a field. Find a generator of the cyclic group
+    $K^X$.
+  \end{enumerate}
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+
+\begin{problem}[G4]
+  Let $G=\text{GL}(2,\bb{F}_p)$ be the group of invertible $2\times 2$ matrices
+  with entries in the finite field $\bb{F}_p$, where $p$ is prime.
+  \begin{enumerate}
+  \item Show that $G$ has order $(p^2-1)(p^2-p)$.
+  \item Show that for $p=2$ the group $G$ is isomorphic to the symmetric group
+    $S_3$.
+  \end{enumerate}
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+
+\begin{problem}[G5]
+  Let $G$ be the group of units of the ring $\bb{Z}/247\bb{Z}$.
+  \begin{enumerate}
+  \item Determine the order of $G$.
+  \item Determine the structure of $G$ (as in the classification theorem for
+    finitely generated abelian groups).
+    (Hint: Use the Chinese Remainder Theorem).
+  \end{enumerate}
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+
+\begin{problem}[G8]
+  List all abelian groups of order 8 up to isomorphism. Identify which groups on
+  your list is isomorphic to each of the following groups of order $8$. Justify
+  your answer.
+  \begin{enumerate}
+  \item $(\bb{Z}/15\bb{Z})^*=$ the group of units of the ring $\bb{Z}/15\bb{Z}$.
+  \item The roots of the equation $z^8-1=0$ in $\bb{C}$.
+  \item $\bb{F}_8^+=$ the additive group of the field $\bb{F}_8$ with
+    eight elements.
+  \end{enumerate}
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+
+\begin{problem}[R4]
+  Let $\bb{F}$ be a field and let $R=\bb{F}[X,Y]$ be the ring of polynomials
+  in $X$ and $Y$ with coefficients from $\bb{F}$.
+  \begin{enumerate}
+  \item Show that $M=\langle X+1,Y-2\rangle$ is a maximal ideal of $R$.
+  \item Show that $P=\langle X+Y+1\rangle$ is a prime ideal of $R$.
+  \item Is $P$ a maximal ideal of $R$. Justify your answer.
+  \end{enumerate}
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+
+\begin{problem}[R6]
+  Let $R$ be a commutative ring with identity and let $I$ and $J$
+  be ideals of $R$.
+  \begin{enumerate}
+  \item Define
+    \[ (I:J)=\{r\in R|rx\in I, \forall x\in J\} \]
+    Show that $(I:J)$ is an ideal of $R$ containing $I$.
+  \item Show that if $P$ is a prime ideal of $R$ and $x\notin P$,
+    then $(P:\langle x\rangle)=P$, where $\langle x\rangle$ denotes the
+    principal ideal generated by $x$.
+  \end{enumerate}
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+
+\begin{problem}[R7]
+  Let $R$ be a commutative ring with identity, and let $I$ and $J$ be ideals
+  of $R$.
+  \begin{enumerate}
+  \item Define what is meant by the sum $I+J$ and the product $IJ$ of
+    the ideals $I$ and $J$.
+  \item If $I$ and $J$ are distinct maximal ideals, show that $I+J=R$ and
+    $I\cap J=IJ$.
+  \end{enumerate}
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
