@@ -12,6 +12,7 @@
 \newcommand{\sk}{\vskip 10mm}
 \newcommand{\bb}[1]{\mathbb{#1}}
 \newcommand{\ra}{\rightarrow}
+\newcommand{\mm}[4]{\begin{array}[cc] #1 & #2 \\ #3 & #4\end{array}}
 
 \theoremstyle{plain}
 \newtheorem{problem}{Problem}
@@ -87,14 +88,34 @@
     \end{enumerate}
   \item Find all irreducible polynomials of degree $\leq 3$ in $\bb{Z}_2[x]$,
     and the same for $\bb{Z}_3[x]$.
-  \item Prove that if $n$ is composite number, then $\sum_0^{n-1}x^{n-1}$ is
+  \item Prove that if $n$ is composite number, then $\sum_0^{n-1}x^{i}$ is
     reducible over $\bb{Z}$.
   \end{enumerate}
 \end{problem}
 
 \begin{proof}
-  
-\end{proof}
+  \begin{enumerate}
+  \item
+    \begin{enumerate}
+    \item $x^3+x+1=(x+2)(x^2+x+2)$
+    \item $x^4+1=(x^2+2)(x^2+3)$
+    \item No roots, must be product of two irreducibles of deg 2. But $a+b=10$
+      and $ab=1$ which cannot occur. \textbf{Make this pretty.}
+    \item Eisenstein $p=2$
+    \item Eisenstein $p=3$
+    \item Consider $\bb{Z}[x,y]/(y-1)$. Get $x^2+x+1$ root must be either $\pm 1$.
+      Use gauss's lemma.
+    \end{enumerate}
+  \item
+    \begin{enumerate}
+    \item Sub $x-1$ for $x$ and that simplifies to $x^4-2x+2$ by Eisenstein with
+      $p=2$ is irreducible and thus the rest of it is as well.
+    \item 
+    \item 
+    \end{enumerate}
+
+  \end{enumerate}
+  \end{proof}
 
 \sk
 
@@ -106,7 +127,22 @@
 \end{problem}
 
 \begin{proof}
-  
+  Let $R$ be a PID and $a,b\in R$ such that $a$ and $b$ are relatively prime.
+  Then $1$ is a gcd of $a$ and $b$. However this means that
+  there exists $\alpha,\beta\in R$ such that $\alpha a+\beta b = 1\in (a)+(b)$ (Prop 8.11) implying that
+  $(a)+(b)=1$.
+
+  Now we will show that $a^i$ and $b$ are relatively prime. We have the case where
+  $i=1$ be assumption. Next assume that we have $\alpha a^i+b=1$. Then if we square
+  both sides we get
+  \[ \alpha^2a^{2i}+\beta^2b^2+\alpha a^i\beta b+\beta b \alpha a^i \beta b = (\alpha^2a^{i-1})a^{i+1}+(\beta b+\alpha a^i \beta +\alpha a^i\beta)b=1 \]
+  which shows that $a^{i+1}$ is relatively prime to $b$ with the assumption that
+  $a^i$ is relatively prime to $b$. Therefore $a^i$ is relatively prime to $b$ where
+  $i\in \bb{Z}_{>0}$. To get arbitrary powers of $b$ just set $a:=b$ and $b:=a^i$
+  and repeat the process.
+
+  Therefore if $a,b$ are relatively prime then $(a)+(b)=R$ and $a^i,b^j$ are relatively
+  prime for $i,j\in\bb{Z}_{>0}$.
 \end{proof}
 
 \sk
@@ -123,7 +159,25 @@
 \end{problem}
 
 \begin{proof}
-  
+  \begin{enumerate}
+  \item We proceed by induction. Suppose that $\deg f=0$. Then $(f)=F[x]$
+    implies that $F[x]/(f)\cong F[x]/F[x]=\{0\}$ which shows that the order is one.
+
+    Now assume that if $\deg g \leq n$ then $F[x]/(f)$ is of order $q^{\deg g}$.
+    Then suppose that $\deg f = n+1$. In the case where $f$ is reducible
+    by Proposition 9.23 we have
+    \[ f=f_1^{n_1}\cdots f_k^{n_k} \]
+    where $\sum n_i=n+1$ and $n_i\leq n$ and that
+    $F[x]/(f) \cong F[x]/(f_1^{n_1}\times\cdots\times f_k^{n_k})$
+    The order of $F[x]/(f_i^{n_ii})$ is $q^{n_i}$ by our inductive hypothesis
+    which implies that $|F[x]/(f)|=q^{n_1}\cdots q^{n_k}=q^{n+1}$.
+
+    However if $f$ is irreducible, then $F[x]/(f)$ is the $n+1$th degree
+    field extension and which the field with $q^{n+1}$ elements.
+
+    Therefore if $\deg f=n$ then the order of $F[x]/(f)$ is $q^n$ where
+    $F$ is the field with $q$ elements.
+  \end{enumerate}
 \end{proof}
 
 \sk
@@ -157,7 +211,31 @@
 \end{problem}
 
 \begin{proof}
-  
+  \begin{enumerate}
+  \item
+  \item \[ \left(1, 1\right), \left(2, 36\right), \left(3, 18\right), \left(4, 18\right), \left(5, 36\right), \left(6, 36\right), \left(7, 12\right), \left(8, 12\right), \left(9, 9\right), \left(10, 18\right), \left(11, 12\right), \left(12, 6\right),\]
+    \[ \left(14, 18\right), \left(15, 36\right), \left(16, 9\right), \left(17, 18\right), \left(18, 4\right), \left(20, 12\right), \left(21, 36\right), \left(22, 18\right), \left(23, 18\right), \left(24, 36\right), \left(25, 18\right),\]
+    \[ \left(27, 6\right), \left(28, 36\right), \left(29, 18\right), \left(30, 6\right), \left(31, 12\right), \left(32, 36\right), \left(33, 36\right), \left(34, 36\right), \left(35, 9\right), \left(36, 18\right), \left(37, 12\right),\]
+    \[\left(40, 18\right), \left(41, 36\right), \left(42, 9\right), \left(43, 18\right), \left(44, 36\right), \left(45, 12\right), \left(46, 12\right), \left(47, 36\right), \left(48, 18\right), \left(49, 6\right), \left(50, 12\right),\]
+    \[ \left(51, 18\right), \left(53, 18\right), \left(54, 36\right), \left(55, 9\right), \left(56, 6\right), \left(58, 12\right), \left(59, 36\right), \left(60, 36\right), \left(61, 9\right), \left(62, 18\right), \left(63, 36\right),\]
+    \[ \left(64, 6\right), \left(66, 9\right), \left(67, 36\right), \left(68, 3\right), \left(69, 6\right), \left(70, 36\right), \left(71, 36\right), \left(72, 36\right), \left(73, 36\right), \left(74, 9\right), \left(75, 6\right),\]
+    \[ \left(77, 2\right), \left(79, 18\right), \left(80, 36\right), \left(81, 9\right), \left(82, 18\right), \left(83, 12\right), \left(84, 12\right), \left(85, 36\right), \left(86, 36\right), \left(87, 3\right), \left(88, 6\right),\]
+    \[ \left(89, 36\right), \left(90, 18\right), \left(92, 9\right), \left(93, 36\right), \left(94, 6\right), \left(96, 4\right), \left(97, 36\right), \left(98, 36\right), \left(99, 36\right), \left(100, 9\right), \left(101, 18\right),\]
+    \[ \left(102, 12\right), \left(103, 6\right), \left(105, 18\right), \left(106, 12\right), \left(107, 6\right), \left(108, 18\right), \left(109, 36\right), \left(110, 36\right), \left(111, 36\right),\]
+    \[ \left(112, 36\right), \left(113, 6\right), \left(115, 12\right), \left(116, 18\right), \left(118, 9\right), \left(119, 36\right), \left(120, 9\right), \left(121, 6\right), \left(122, 12\right), \left(123, 36\right), \]
+    \[\left(124, 36\right),\left(125, 12\right), \left(126, 6\right), \left(127, 18\right), \left(128, 36\right), \left(129, 18\right), \left(131, 9\right), \left(132, 12\right), \left(134, 6\right), \left(135, 36\right),\]
+    \[ \left(136, 36\right), \left(137, 36\right), \left(138, 36\right), \left(139, 9\right), \left(140, 6\right), \left(141, 12\right), \left(142, 18\right), \left(144, 3\right), \left(145, 12\right), \left(146, 18\right),\]
+    \[ \left(147, 18\right), \left(148, 36\right), \left(149, 36\right), \left(150, 36\right), \left(151, 4\right), \left(153, 6\right), \left(154, 36\right), \left(155, 18\right), \left(157, 9\right), \left(158, 36\right),\]
+    \[ \left(159, 3\right), \left(160, 6\right), \left(161, 36\right), \left(162, 36\right), \left(163, 12\right), \left(164, 12\right), \left(165, 18\right), \left(166, 18\right), \left(167, 36\right),\]
+    \[ \left(168, 18\right), \left(170, 2\right), \left(172, 3\right), \left(173, 18\right), \left(174, 36\right), \left(175, 36\right), \left(176, 36\right), \left(177, 36\right), \left(178, 3\right), \left(179, 6\right),\]
+    \[ \left(180, 36\right), \left(181, 18\right), \left(183, 6\right), \left(184, 36\right), \left(185, 18\right), \left(186, 18\right), \left(187, 36\right), \left(188, 36\right), \left(189, 12\right),\]
+    \[ \left(191, 3\right), \left(192, 18\right), \left(193, 36\right), \left(194, 18\right), \left(196, 9\right), \left(197, 12\right), \left(198, 6\right), \left(199, 18\right), \left(200, 36\right),\]
+    \[ \left(201, 12\right), \left(202, 12\right), \left(203, 36\right), \left(204, 18\right), \left(205, 18\right), \left(206, 36\right), \left(207, 18\right), \left(210, 12\right), \left(211, 18\right),\]
+    \[ \left(212, 18\right), \left(213, 36\right), \left(214, 36\right), \left(215, 36\right), \left(216, 12\right), \left(217, 6\right), \left(218, 18\right), \left(219, 36\right), \left(220, 6\right),\]
+    \[ \left(222, 18\right), \left(223, 36\right), \left(224, 18\right), \left(225, 18\right), \left(226, 36\right), \left(227, 12\right), \left(229, 4\right), \left(230, 18\right), \left(231, 18\right),\]
+    \[ \left(232, 36\right), \left(233, 18\right), \left(235, 3\right), \left(236, 12\right), \left(237, 9\right), \left(238, 18\right), \left(239, 12\right), \left(240, 12\right), \left(241, 36\right),\]
+    \[ \left(242, 36\right), \left(243, 18\right), \left(244, 18\right), \left(245, 36\right), \left(246, 2\right)\]
+  \end{enumerate}
 \end{proof}
 
 \sk
@@ -210,7 +288,7 @@
     then $(P:\langle x\rangle)=P$, where $\langle x\rangle$ denotes the
     principal ideal generated by $x$.
   \end{enumerate}
-\end{problem}
+p\end{problem}
 
 \begin{proof}
   
