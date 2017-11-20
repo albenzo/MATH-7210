@@ -32,7 +32,27 @@
 \end{problem}
 
 \begin{proof}
-  
+  The only units of $R$ will be elements $a+b\sqrt{-5}$ wherein
+  $\frac{1}{a^2+5b^2}\in\bb{Z}$. However this will not happen for any elements
+  except $\pm 1$. Therefore $2,3,1+\sqrt{-5},1-\sqrt{-5}$ are not associates.
+  \begin{itemize}
+  \item The norm of 2 is 4. Since the norm is multiplicative if $xy=2$ then
+    the product of their norms must be 4. Since we're throwing out associates
+    we must have $N(x)=N(y)=2$. However this cannot occur in $R$. Therefore
+    $2$ is irreducible.
+  \item As above the norm of 3 is 9. For the same reasoning for $xy=3$ to hold
+    we must have $N(x)=N(y)=3$ but this cannot happen in $R$. Therefore $3$ is
+    irreducible.
+  \item The norm of $1+\sqrt{-5}$ is $6$. As such if $xy=1+\sqrt{-5}$ holds
+    we must have $N(x)=2$ and $N(y)=3$ or vice versa. However no such elements
+    exist. Therefore $1+\sqrt{-5}$ is irreducible.
+  \item The norm of $1-\sqrt{-5}$ is $6$. As such if $xy=1-\sqrt{-5}$ holds
+    we must have $N(x)=2$ and $N(y)=3$ or vice versa. However no such elements
+    exist. Therefore $1-\sqrt{-5}$ is irreducible.
+  \end{itemize}
+
+  Using this we have $6=2\cdot 3 = (1+\sqrt{-5})(1-\sqrt{-5})$ which are two distinct
+  factorizations of $6$ in $R$ which implies that $R$ is not a UFD.
 \end{proof}
 
 \sk
@@ -119,13 +139,32 @@
     \begin{enumerate}
     \item Substitute $x-1$ for $x$ in the polynomial and it simplifies to
       $x^4-2x+2$. Then it is irreducible by Eisenstein's Criterion with $p=2$.
-    \item 
-    \item 
+    \item First we simplify the polynomial
+      \begin{align*}
+        \frac{(x+2)^p-2^p}{x} &= \frac{\sum_0^p{p\choose i}x^i2^{p-i}-2^p}{x}\\
+                            &= \frac{\sum_1^p{p\choose i}x^i2^{p-i}}{x}\\
+                            &= \sum_0^{p-1}{p\choose i+1}x^{i}2^{p-(i+1)}
+      \end{align*}
+      Now since $p$ is prime we can use Eisenstein's Criterion with
+      $p=2$ to get that the polynomial is irreducible.
+    \item From $\prod_1^n(x-i)-1$ we can deduce that $a_n=1$ and $a_0=(-1)^nn!-1$.
+      This implies that $a_0$ will be prime and as such the polynomial will
+      irreducible.
     \end{enumerate}
   \item For $\bb{Z}_2[x]$ we have
-    \[  x, x^{3} + x, x + 1, x^{3} + x + 1, x^{2} + x + 1, x^{3} + x^{2} + x + 1\]
-    For $\bb{Z}_3[x]$ we have
-    \[  y, y^{3} + y, 2 y^{3} + y, y + 1, y^{3} + y + 1, 2 y^{3} + y + 1, y + 2, y^{3} + y + 2, 2 y^{3} + y + 2, 2 y, y^{3} + 2 y, 2 y^{3} + 2 y, 2 y + 1, y^{3} + 2 y + 1, 2 y^{3} + 2 y + 1, 2 y + 2, y^{3} + 2 y + 2, 2 y^{3} + 2 y + 2, y^{2} + 1, y^{3} + y^{2} + 1, 2 y^{3} + y^{2} + 1, y^{2} + y + 2, y^{3} + y^{2} + y + 2, 2 y^{3} + y^{2} + y + 2, y^{2} + 2 y + 2, y^{3} + y^{2} + 2 y + 2, 2 y^{3} + y^{2} + 2 y + 2, 2 y^{2} + 2, y^{3} + 2 y^{2} + 2, 2 y^{3} + 2 y^{2} + 2, 2 y^{2} + y + 1, y^{3} + 2 y^{2} + y + 1, 2 y^{3} + 2 y^{2} + y + 1, 2 y^{2} + 2 y + 1, y^{3} + 2 y^{2} + 2 y + 1, 2 y^{3} + 2 y^{2} + 2 y + 1\]
+    \[ x, x + 1, x^{2} + x + 1, x^{3} + x + 1, x^{3} + x^{2} + 1\]
+    For $\bb{Z}_3[y]$ we have
+    \[y, y + 1, y + 2, 2 y, 2 y + 1, 2 y + 2, y^{2} + 1, y^{2} + y + 2, y^{2} + 2 y + 2, 2 y^{2} + 2, 2 y^{2} + y + 1,\]
+    \[ 2 y^{2} + 2 y + 1, y^{3} + 2 y + 1, y^{3} + 2 y + 2, y^{3} + y^{2} + 2, y^{3} + y^{2} + y + 2, y^{3} + y^{2} + 2 y + 1, y^{3} + 2 y^{2} + 1,\]
+    \[ y^{3} + 2 y^{2} + y + 1, y^{3} + 2 y^{2} + 2 y + 2, 2 y^{3} + y + 1, 2 y^{3} + y + 2, 2 y^{3} + y^{2} + 2, 2 y^{3} + y^{2} + y + 1, 2 y^{3} + y^{2} + 2 y + 2,\]
+    \[ 2 y^{3} + 2 y^{2} + 1, 2 y^{3} + 2 y^{2} + y + 2, 2 y^{3} + 2 y^{2} + 2 y + 1 \]
+  \item If $n=ab$ is composite we can rewrite it as
+    \begin{align*}
+      \sum_0^{n-1}x^i&= \frac{x^{ab}-1}{x-1}\\
+                 &= \frac{x^a-1)(x^{ab-a)}+\cdots+1)}{x-1}\\
+                 &= (x^{a-1}+\cdots+1)(x^{ab-a}+\cdots+1)
+    \end{align*}
+    which implies that $f$ is reducible.
   \end{enumerate}
   \end{proof}
 
@@ -179,7 +218,7 @@
     Then suppose that $\deg f = n+1$. In the case where $f$ is reducible
     by Proposition 9.23 we have
     \[ f=f_1^{n_1}\cdots f_k^{n_k} \]
-    where $\sum n_i=n+1$ and $n_i\leq n$ and that
+    where $\sum n_i=(n+1)$ and $n_i\leq n$ and that
     $F[x]/(f) \cong F[x]/(f_1^{n_1}\times\cdots\times f_k^{n_k})$
     The order of $F[x]/(f_i^{n_ii})$ is $q^{n_i}$ by our inductive hypothesis
     which implies that $|F[x]/(f)|=q^{n_1}\cdots q^{n_k}=q^{n+1}$.
@@ -189,6 +228,9 @@
 
     Therefore if $\deg f=n$ then the order of $F[x]/(f)$ is $q^n$ where
     $F$ is the field with $q$ elements.
+  \item We listed $f$ as an irreducible above. This implies $K$ is a
+    degree 3 field extension. The generator is $x$.
+    \[ x,x^2,x+1,x^2+x,x^2+x+1,x^2+1,1\]
   \end{enumerate}
 \end{proof}
 
