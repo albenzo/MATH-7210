@@ -12,7 +12,7 @@
 \newcommand{\sk}{\vskip 10mm}
 \newcommand{\bb}[1]{\mathbb{#1}}
 \newcommand{\ra}{\rightarrow}
-\newcommand{\mm}[4]{\begin{array}[cc] #1 & #2 \\ #3 & #4\end{array}}
+\newcommand{\mm}[4]{\left(\begin{array}{cc}  #1 &  #2 \\ #3 & #4\end{array}\right)}
 
 \theoremstyle{plain}
 \newtheorem{problem}{Problem}
@@ -99,17 +99,26 @@
     \begin{enumerate}
     \item $x^3+x+1=(x+2)(x^2+x+2)$
     \item $x^4+1=(x^2+2)(x^2+3)$
-    \item No roots, must be product of two irreducibles of deg 2. But $a+b=10$
-      and $ab=1$ which cannot occur. \textbf{Make this pretty.}
-    \item Eisenstein $p=2$
-    \item Eisenstein $p=3$
-    \item Consider $\bb{Z}[x,y]/(y-1)$. Get $x^2+x+1$ root must be either $\pm 1$.
-      Use gauss's lemma.
+    \item The polynomial has no roots. As such it must be the product of two
+      degree two irreducibles. However the only way this could occur is
+      if $a+b=10$ and $ab=1$ which cannot happen with integers.
+      Thus $x^4+10x^2+1$ is irreducible.
+    \item This polynomial is irreducible by Eisenstein's Criterion with
+      $p=1$.
+    \item This polynomial is irreducible by Eisenstein's Criterion with
+      $p=3$.
+    \item First consider the polynomial in $\bb{Z}[x,y]/(y-1)$. Then the
+      polynomial we get is $x^2+x+1$. The roots of the original are then
+      forced to be $\pm 1$ for $x$. However this is not the case and as
+      such by Gauss' Lemma the polynomial is irreducible.
+
+      Consider $\bb{Z}[x,y]/(y-1)$. Get $x^2+x+1$ root must be either $\pm 1$.
+      Use Gauss' lemma.
     \end{enumerate}
   \item
     \begin{enumerate}
-    \item Sub $x-1$ for $x$ and that simplifies to $x^4-2x+2$ by Eisenstein with
-      $p=2$ is irreducible and thus the rest of it is as well.
+    \item Substitute $x-1$ for $x$ in the polynomial and it simplifies to
+      $x^4-2x+2$. Then it is irreducible by Eisenstein's Criterion with $p=2$.
     \item 
     \item 
     \end{enumerate}
@@ -194,7 +203,18 @@
 \end{problem}
 
 \begin{proof}
-  
+  \begin{enumerate}
+  \item For the first column there are $p^2$  possibilities to choose. However
+    both values cannot be zero so we end up with $p^2-1$ choices for
+    the first column. For the second column there are also $p^2$ choices
+    but we must avoid the $p$ multiples of the first column.  As such
+    there are $p^2-p$ choices for the second column and as such
+    the order of $G$ is $(p^2-1)(p^2-p)$.
+  \item The order of $G$ is 6. The only groups of order 6 are
+    $\bb{Z}_6$ and $S_3$. However  we have
+    \[ \mm{1}{1}{0}{1}\mm{1}{0}{1}{1}=\mm{0}{1}{1}{1}\neq \mm{1}{1}{1}{0}=\mm{1}{0}{1}{1} \mm{1}{1}{0}{1} \]
+    which implies that $G$ is not abelian. Therefore $G\cong S_3$.
+  \end{enumerate}
 \end{proof}
 
 \sk
@@ -212,29 +232,12 @@
 
 \begin{proof}
   \begin{enumerate}
-  \item
-  \item \[ \left(1, 1\right), \left(2, 36\right), \left(3, 18\right), \left(4, 18\right), \left(5, 36\right), \left(6, 36\right), \left(7, 12\right), \left(8, 12\right), \left(9, 9\right), \left(10, 18\right), \left(11, 12\right), \left(12, 6\right),\]
-    \[ \left(14, 18\right), \left(15, 36\right), \left(16, 9\right), \left(17, 18\right), \left(18, 4\right), \left(20, 12\right), \left(21, 36\right), \left(22, 18\right), \left(23, 18\right), \left(24, 36\right), \left(25, 18\right),\]
-    \[ \left(27, 6\right), \left(28, 36\right), \left(29, 18\right), \left(30, 6\right), \left(31, 12\right), \left(32, 36\right), \left(33, 36\right), \left(34, 36\right), \left(35, 9\right), \left(36, 18\right), \left(37, 12\right),\]
-    \[\left(40, 18\right), \left(41, 36\right), \left(42, 9\right), \left(43, 18\right), \left(44, 36\right), \left(45, 12\right), \left(46, 12\right), \left(47, 36\right), \left(48, 18\right), \left(49, 6\right), \left(50, 12\right),\]
-    \[ \left(51, 18\right), \left(53, 18\right), \left(54, 36\right), \left(55, 9\right), \left(56, 6\right), \left(58, 12\right), \left(59, 36\right), \left(60, 36\right), \left(61, 9\right), \left(62, 18\right), \left(63, 36\right),\]
-    \[ \left(64, 6\right), \left(66, 9\right), \left(67, 36\right), \left(68, 3\right), \left(69, 6\right), \left(70, 36\right), \left(71, 36\right), \left(72, 36\right), \left(73, 36\right), \left(74, 9\right), \left(75, 6\right),\]
-    \[ \left(77, 2\right), \left(79, 18\right), \left(80, 36\right), \left(81, 9\right), \left(82, 18\right), \left(83, 12\right), \left(84, 12\right), \left(85, 36\right), \left(86, 36\right), \left(87, 3\right), \left(88, 6\right),\]
-    \[ \left(89, 36\right), \left(90, 18\right), \left(92, 9\right), \left(93, 36\right), \left(94, 6\right), \left(96, 4\right), \left(97, 36\right), \left(98, 36\right), \left(99, 36\right), \left(100, 9\right), \left(101, 18\right),\]
-    \[ \left(102, 12\right), \left(103, 6\right), \left(105, 18\right), \left(106, 12\right), \left(107, 6\right), \left(108, 18\right), \left(109, 36\right), \left(110, 36\right), \left(111, 36\right),\]
-    \[ \left(112, 36\right), \left(113, 6\right), \left(115, 12\right), \left(116, 18\right), \left(118, 9\right), \left(119, 36\right), \left(120, 9\right), \left(121, 6\right), \left(122, 12\right), \left(123, 36\right), \]
-    \[\left(124, 36\right),\left(125, 12\right), \left(126, 6\right), \left(127, 18\right), \left(128, 36\right), \left(129, 18\right), \left(131, 9\right), \left(132, 12\right), \left(134, 6\right), \left(135, 36\right),\]
-    \[ \left(136, 36\right), \left(137, 36\right), \left(138, 36\right), \left(139, 9\right), \left(140, 6\right), \left(141, 12\right), \left(142, 18\right), \left(144, 3\right), \left(145, 12\right), \left(146, 18\right),\]
-    \[ \left(147, 18\right), \left(148, 36\right), \left(149, 36\right), \left(150, 36\right), \left(151, 4\right), \left(153, 6\right), \left(154, 36\right), \left(155, 18\right), \left(157, 9\right), \left(158, 36\right),\]
-    \[ \left(159, 3\right), \left(160, 6\right), \left(161, 36\right), \left(162, 36\right), \left(163, 12\right), \left(164, 12\right), \left(165, 18\right), \left(166, 18\right), \left(167, 36\right),\]
-    \[ \left(168, 18\right), \left(170, 2\right), \left(172, 3\right), \left(173, 18\right), \left(174, 36\right), \left(175, 36\right), \left(176, 36\right), \left(177, 36\right), \left(178, 3\right), \left(179, 6\right),\]
-    \[ \left(180, 36\right), \left(181, 18\right), \left(183, 6\right), \left(184, 36\right), \left(185, 18\right), \left(186, 18\right), \left(187, 36\right), \left(188, 36\right), \left(189, 12\right),\]
-    \[ \left(191, 3\right), \left(192, 18\right), \left(193, 36\right), \left(194, 18\right), \left(196, 9\right), \left(197, 12\right), \left(198, 6\right), \left(199, 18\right), \left(200, 36\right),\]
-    \[ \left(201, 12\right), \left(202, 12\right), \left(203, 36\right), \left(204, 18\right), \left(205, 18\right), \left(206, 36\right), \left(207, 18\right), \left(210, 12\right), \left(211, 18\right),\]
-    \[ \left(212, 18\right), \left(213, 36\right), \left(214, 36\right), \left(215, 36\right), \left(216, 12\right), \left(217, 6\right), \left(218, 18\right), \left(219, 36\right), \left(220, 6\right),\]
-    \[ \left(222, 18\right), \left(223, 36\right), \left(224, 18\right), \left(225, 18\right), \left(226, 36\right), \left(227, 12\right), \left(229, 4\right), \left(230, 18\right), \left(231, 18\right),\]
-    \[ \left(232, 36\right), \left(233, 18\right), \left(235, 3\right), \left(236, 12\right), \left(237, 9\right), \left(238, 18\right), \left(239, 12\right), \left(240, 12\right), \left(241, 36\right),\]
-    \[ \left(242, 36\right), \left(243, 18\right), \left(244, 18\right), \left(245, 36\right), \left(246, 2\right)\]
+  \item The order of $G$ is $\varphi(247)=\varphi(13\cdot 19)=(12)(18)=216$.
+  \item By the Chinese Remainder Theorem we have that $\bb{Z}_{247}\cong\bb{Z}_{13}\times\bb{Z}_{19}$.
+    This implies that $\bb{Z}_{247}^X=(\bb{Z}_{13}\times\bb{Z}_{19})^X$. For each component is
+    $2$. Thus the largest order in $\bb{Z}_{247}^X$ is $\text{lcm}(12,18)=36$. By the
+    structure theorem for finite abelian groups there the only possible structure for
+    $\bb{Z}_{247}$ is $\bb{Z}_{36}\oplus\bb{Z}_6$.
   \end{enumerate}
 \end{proof}
 
@@ -254,7 +257,20 @@
 \end{problem}
 
 \begin{proof}
-  
+  By the structure theorem for finite abelian groups there are three
+  possibilities for groups of order 8. They are
+  \[ \bb{Z}_8,\bb{Z}_2\oplus\bb{Z}_4, \bb{Z}_2\oplus\bb{Z}_2\oplus\bb{Z}_2 \]
+
+  \begin{enumerate}
+  \item The elements of $\bb{Z}_{15}^X$ are $\{1,2,4,7,8,11,13,14\}$. The
+    orders respectively are $1,4,2,4,4,2,4,2$ which implies that
+    the structure of the group is $\bb{Z}_2\oplus\bb{Z}_4$.
+  \item The group of roots is generated by $e^{\frac{\pi i}{4}}$. As such the
+    structure is $\bb{Z}_8$.
+  \item The field with 8 elements has characteristic two. As such
+    all elements in the additive group will have order 2. Therefore
+    the structure is $\bb{Z}_2\oplus\bb{Z}_2\oplus\bb{Z}_2$.
+  \end{enumerate}
 \end{proof}
 
 \sk
@@ -271,7 +287,21 @@
 \end{problem}
 
 \begin{proof}
-  
+  \begin{enumerate}
+  \item In $F[x,y]/\langle x+1,y-2\rangle$ we have that $x+1=0$ and $y-2=0$ which
+    implies that $x=-1$ and $y=2$ in the quotient. As such any polynomial
+    can be reduced to an element in $F$ and as such the quotient is a field.
+    Therefore $\langle x+1,y-2\rangle$ is a maximal ideal.
+  \item As above in $F[x,y]/P$ we get the relation that $X+Y+1=0$. Since
+    $F[x,y]$ is an integral domain the only way to get zero divisors in
+    $F[x,y]/P$ would be if there are two nonzero polynomials that multiplied
+    to $X+Y+1$. However this cannot happen because the degree of $X+Y+1=0$.
+    Therefore the quotient $F[x,y]/P$ is an integral domain and as such $P$
+    is a prime ideal.
+  \item It is not a maximal ideal. Note that $X\notin P$ which means that $\langle X,X+Y+1\rangle=\langle X,Y+1\rangle$
+    is an distinct ideal containing $P$.  However this ideal is not all of $F[x,y]$.
+    Therefore $P$ is not maximal.
+  \end{enumerate}
 \end{proof}
 
 \sk
@@ -288,10 +318,18 @@
     then $(P:\langle x\rangle)=P$, where $\langle x\rangle$ denotes the
     principal ideal generated by $x$.
   \end{enumerate}
-p\end{problem}
+\end{problem}
 
 \begin{proof}
-  
+  \begin{enumerate}
+  \item Let $f\in I$. Then $fg\in I$ for all $g\in J$ as $I$ is an ideal. Therefore
+    $I\subseteq I:J$.
+  \item We know that $P\subseteq P:\langle x\rangle$ by the previous part of the problem. Let
+    $f\in P:\langle x\rangle$. Then $fx\in P$ however since $P$ is prime and $x\notin P$ it follows
+    that $f\in P$ and as such $P:\langle x\rangle\subseteq P$.
+
+    Therefore $P=P:\langle x\rangle$ when $P$ is prime and $x\notin P$.
+  \end{enumerate}
 \end{proof}
 
 \sk
@@ -309,7 +347,22 @@ p\end{problem}
 \end{problem}
 
 \begin{proof}
-  
+  \begin{enumerate}
+  \item For a commutative ring we have
+    \[ I+J = \{f+g|f\in I,g\in J\}\]
+    and
+    \[ IJ = \{fg|f\in I, g\in J \}\]
+  \item Since $I\subseteq I+J$, $I,J$ are distinct, and $I$ is maximal it follows that $I+J=R$.
+
+    Next we'll show that $I\cap J=IJ$. Let $fg\in IJ$ where $f\in I$ and $g\in J$. Then $fg\in I$ and $fg\in J$ which implies that
+    $fg\in I\cap J$ and as such $IJ\subseteq I\cap J$.
+
+    Now suppose that $f\in I\cap J$. Then since $I,J$ are maximal there exists $g\in I$ and $h\in J$ such that
+    $1=g+h$. Multiply by $f$ to get $f=fg+fh$. We know that $fg\in IJ$ since $f\in J$ and $g\in I$. We also have
+    that $fh \in IJ$ as $f\in I$ and $h\in J$. This implies that $fg+fh=f\in IJ$ and as such $I\cap J \subseteq IJ$.
+
+    Therefore $I\cap J = IJ$ and $I+J = R$.
+  \end{enumerate}
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
