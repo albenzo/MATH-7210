@@ -220,18 +220,40 @@ $\bb{Z}$.
 \begin{proof}
   \begin{enumerate}
   \item $M/pM$ is already a quotient group and as such we do not need to verify
-    the group axioms. Thus the items that we need to check are
+    the group axioms. From here on in this problem $r,s\in R$ and $x,y\in M$.
     \begin{enumerate}
-    \item
-    \item
-    \item
-    \item
+    \item Start with $((r+(p))+(s+(p)))(x+pM)$ to get
+      \[((r+(p))+(s+(p)))(x+pM)=((r+s)+(p))(x+pM)\]
+      \[=(r+s)x+pM=rx+sx+pM=(rx+pM)+(sx+pM) \]
+      \[=(r+(p))(x+pM)+(s+(p))(x+pM) \]
+    \item Start with $((r+(p))(s+(p)))(x+pM)$ to get
+      \[((r+(p))(s+(p)))(x+pM)=(rs+r(p)+s(p)+(p))(x+pM)=\]
+      \[(rs+(p))(x+pM)=(rs)x+pM=r(sx)+pM=(r+(p))(sx+pM) \]
+      \[(r+(p))((s+(p))(x+pM)) \]
+    \item Start with $(r+(p))((x+pM)+(y+pM))$ to get
+      \[(r+(p))((x+pM)+(y+pM))=(r+(p))((x+y)+pM)\]
+      \[=r(x+y)+pM=(rx+ry)+pM=(rx+pM)+(ry+pM)\]
+      \[=(r+(p))(x+pM)+(r+(p))(y+pM)\]
+    \item Finally begin with $(1+(p))(x+pM)$ to get
+      \[(1+(p))(x+pM)=1x+pM=x+pM \].
     \end{enumerate}
+    Since all of the axioms for a module are fulfilled it is true that
+    $M/pM$ is an $R/(p)$-module with the action as defined above.
 
-    Now we will show that $\phi$ is an $R$-module map.
+    Now we will show that $\phi$ is an $R$-module map. This map is already a
+    homomorphism of groups since the $x_i$s form a basis. Thus all that is left
+    to check is that the $R/(p)$ action plays nicely with the map $\bar{\phi}$.
+    Let $r+(p)\in R/(p)$ and $\sum_1^mr_ix_i+pM\in M/pM$. Then
+    \[\phi((r+(p))(\sum_1^mr_ix_i+pM))=\phi(\sum_1^mrr_ix_i)=(\bar{rr_1},\ldots,\bar{rr_m})\]
+    \[=((r+(p))\bar{r_1},\ldots,(r+(p))\bar{r_m})=(r+(p))(\bar{r}_1,\ldots,\bar{r_m})
+      =(r+(p))\phi(\sum_1^mr_ix_i+pM)\]
+    which shows that $\phi$ is indeed an $R/(p)$ module map.
   \item Since the map $\phi$ is injective we know that the restriction will be as
     well. Thus the only portion left to show is that $\phi(pM_1)=pM_2$. To show
-    this
+    this let $m\in pM_2$. Then $p^lm=0$ for some $l$. Since $\phi$ is an isomorphism
+    we have $\phi(p^l)^{-1}\phi^{-1}(m)=0$ which means that $\phi^{-1}(m)\in pM_1$ and as such
+    $\phi(\phi^{-1}(m))=m$. Therefore $\phi(pM_1)=pM_2$ and as such $\phi|_{pM_1}$ is an
+    isomorphism.
 
     Since the map $\phi$ is an isomorphism and we are quotienting out by isomorphic
     submodules it then follows that $\bar{\phi}$ will be an isomorphism between
@@ -401,11 +423,21 @@ which we then reduce to
     \begin{array}{ccc}
       1&0&0\\
       0&x-1&0\\
-      0&0&x^2+2x-1\\
+      0&0&-x^2+2x-1\\
     \end{array}
   \right)
 \]
 Which gives us the rational canonical form
+\[
+  \left(
+    \begin{array}{ccc}
+      1&0&0\\
+      0&0&-1\\
+      0&1&2\\
+    \end{array}
+  \right)
+\]
+and the Jordan canonical from
 \[
   \left(
     \begin{array}{ccc}
@@ -415,8 +447,6 @@ Which gives us the rational canonical form
     \end{array}
   \right)
 \]
-in $\bb{Q}$. This will be the same as it is in $\bb{C}$
-since all of the polynomials had roots in $\bb{Q}$.
 
 \sk
 
